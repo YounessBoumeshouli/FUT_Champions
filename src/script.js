@@ -762,3 +762,8 @@ function eventListenerfornotfill() {
       }
     })
   }
+  closeMenu.addEventListener("click", function () {
+    formPlayer.style.display = "none"; // Hide the form
+    formPlayer.removeEventListener("submit", handleSubmit); // Remove the submit listener
+    formPlayer.currentTarget = null; // Clear current target
+  });
