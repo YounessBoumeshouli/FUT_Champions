@@ -655,4 +655,70 @@ function localStorageFormation() {
     });
   }
   
+  eventListenerfornotfill();
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const nf = formPlayer.currentTarget;
+  console.log(nf);
+  if (nf) {
+    Disable(nf);
+    console.log(nf);
+    console.log(nf.id);
+    let player = {
+      id: nf.id,
+      name: PlayerName.value,
+      image: imgPlayerSrc.value,
+      rate: Rate.value,
+      position: Position.value,
+      flagUrl: nationaliteFlag.value,
+      leagueName : leagueName.value,
+      ClubUrl: ClubLogo.value,
+      PACstats: PAC.value,
+      SHOstats: SHO.value,
+      PASstats: PAS.value,
+      DRIstats: DRI.value,
+      DEFstats: DEF.value,
+      PHYstats: PHY.value,
+    };
+
+    players.push(player);
+    localStorage.setItem("players", JSON.stringify(players));
+    eventListenerfornotfill();
+    fillwithLocalStorage();
+  }
+
+  formPlayer.style.display = "none";
+  formPlayer.removeEventListener("submit", handleSubmit);
+  formPlayer.currentTarget = null;
+}
+function eventListenerfornotfill() {
+    let NOTFILL = document.querySelectorAll(".notFill");
+    NOTFILL.forEach((nf) => {
+      nf.addEventListener("mousedown", event => {
+        if (event.button == 0) { 
+          console.log("is clicked");
   
+          formPlayer.style.display = "block";
+          formPlayer.currentTarget = nf;
+          console.log(nf);
+    
+          formPlayer.addEventListener("submit", removeClass(nf));
+    
+          formPlayer.addEventListener("submit", handleSubmit);
+        }else if (event.button == 2){  
+           console.log(event.target.parentElement)
+           divid = event.target.parentElement.id
+           players.forEach(player=>{
+            if(player.id === divid ){
+              console.log("is in the localStorage")
+              updatePlayer(player.id)
+              
+            }
+           })
+        }});
+     
+      
+    });
+  }
