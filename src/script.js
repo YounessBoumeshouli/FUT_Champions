@@ -71,3 +71,4 @@ closeMenu2.addEventListener("click", function () {
   formPlayer.style.display = "none";
   formPlayer2.style.display = "none";
 });
+let players = JSON.parse(localStorage.getItem("players")) || [];
