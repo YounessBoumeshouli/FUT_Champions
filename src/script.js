@@ -506,3 +506,38 @@ function search2(response) {
     Form2()
   })
   .catch((error) => console.error("Error:", error));
+
+
+  let form = document.getElementById("form");
+let formation = document.getElementById("formation");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  console.log(formation.value);
+  switch (formation.value) {
+    case "442":
+      fill(2, 4, 4);
+      fillwithLocalStorage();
+      eventListenerfornotfill();
+      break;
+    case "433":
+      fill(3, 3, 4);
+      fillwithLocalStorage();
+      eventListenerfornotfill();
+      break;
+    case "343":
+      fill(3, 4, 3);
+      fillwithLocalStorage();
+      eventListenerfornotfill();
+      break;
+    case "523":
+      fill(3, 2, 5);
+      fillwithLocalStorage();
+      eventListenerfornotfill();
+      break;
+
+    default:
+      fillwithLocalStorage();
+      eventListenerfornotfill();
+      break;
+  }
+});
