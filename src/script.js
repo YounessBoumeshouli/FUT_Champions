@@ -72,3 +72,320 @@ closeMenu2.addEventListener("click", function () {
   formPlayer2.style.display = "none";
 });
 let players = JSON.parse(localStorage.getItem("players")) || [];
+function Form2(){
+    formPlayer2button.addEventListener("click", function (e) {
+      e.preventDefault();
+    
+      if (
+        PlayerName2.value != "" && imgPlayerSrc2.value != "" && Rate2.value != "") {
+        console.log(PlayerName2.value);
+        console.log(leagueName2.value)
+        if (Position2.value[0] == "C" && Position2.value[1] != "B") {
+          console.log("isHere");
+          let box = [];
+          let flag = false;
+          let player;
+          for (let i = 0; i < 5; i++) {
+            let classp = `centre${i}`;
+            let l = document.getElementById(classp);
+    
+            if (l && !l.hasChildNodes()) {
+              flag = true;
+              box.push(classp);
+              player = {
+                id: box[0],
+                name: PlayerName2.value,
+                image: imgPlayerSrc2.value,
+                rate: Rate2.value,
+                position: Position2.value,
+                flagUrl: nationaliteFlag2.value,
+                ClubUrl: ClubLogo2.value,
+                PACstats: PAC2.value,
+                SHOstats: SHO2.value,
+                PASstats: PAS2.value,
+                DRIstats: DRI2.value,
+                DEFstats: DEF2.value,
+                PHYstats: PHY2.value,
+                leagueName :leagueName2.value
+    
+              };
+    
+              eventListenerfornotfill();
+              break; // Stop the loop once a slot is filled
+            }
+          }
+          if (player) {
+            players.push(player);
+            localStorage.setItem("players", JSON.stringify(players));
+            resetInputs(); 
+            fillwithLocalStorage();
+          
+            }
+          if (flag == false) {
+            for (let i = 0; i < 10; i++) {
+              let classp = `remplace${i}`;
+              let l = document.getElementById(classp);
+    
+              if (l && !l.hasChildNodes()) {
+                box.push(classp);
+                player = {
+                  id: box[0],
+                  name: PlayerName2.value,
+                  image: imgPlayerSrc2.value,
+                  rate: Rate2.value,
+                  position: Position2.value,
+                  flagUrl: nationaliteFlag2.value,
+                  ClubUrl: ClubLogo2.value,
+                  PACstats: PAC2.value,
+                  SHOstats: SHO2.value,
+                  PASstats: PAS2.value,
+                  DRIstats: DRI2.value,
+                  DEFstats: DEF2.value,
+                  PHYstats: PHY2.value,
+                  leagueName : leagueName2.value
+                };
+    
+                eventListenerfornotfill();
+                break; // Stop the loop once a slot is filled
+              }
+            }
+            if (player) {
+              players.push(player);
+              localStorage.setItem("players", JSON.stringify(players));
+              fillwithLocalStorage();
+              resetInputs(); 
+              
+            }
+          }
+        }
+        if (Position2.value.includes("M")) {
+          console.log("isHere");
+          let box = [];
+          let flag = false;
+          let player;
+          for (let i = 0; i < 5; i++) {
+            let classp = `back${i}`;
+            let l = document.getElementById(classp);
+    
+            if (l && !l.hasChildNodes()) {
+              flag = true;
+              box.push(classp);
+              player = {
+                id: box[0],
+                name: PlayerName2.value,
+                image: imgPlayerSrc2.value,
+                rate: Rate2.value,
+                position: Position2.value,
+                flagUrl: nationaliteFlag2.value,
+                ClubUrl: ClubLogo2.value,
+                PACstats: PAC2.value,
+                SHOstats: SHO2.value,
+                PASstats: PAS2.value,
+                DRIstats: DRI2.value,
+                DEFstats: DEF2.value,
+                PHYstats: PHY2.value,
+                leagueName :leagueName2.value
+    
+              };
+    
+              eventListenerfornotfill();
+              break; // Stop the loop once a slot is filled
+            }
+          }
+          if (player) {
+            players.push(player);
+            localStorage.setItem("players", JSON.stringify(players));
+            resetInputs();
+            fillwithLocalStorage(); 
+            }
+          if (flag == false) {
+            for (let i = 0; i < 10; i++) {
+              let classp = `remplace${i}`;
+              let l = document.getElementById(classp);
+    
+              if (l && !l.hasChildNodes()) {
+                box.push(classp);
+                player = {
+                  id: box[0],
+                  name: PlayerName2.value,
+                  image: imgPlayerSrc2.value,
+                  rate: Rate2.value,
+                  position: Position2.value,
+                  flagUrl: nationaliteFlag2.value,
+                  ClubUrl: ClubLogo2.value,
+                  PACstats: PAC2.value,
+                  SHOstats: SHO2.value,
+                  PASstats: PAS2.value,
+                  DRIstats: DRI2.value,
+                  DEFstats: DEF2.value,
+                  PHYstats: PHY2.value,
+                  leagueName : leagueName2.value
+                };
+    
+                eventListenerfornotfill();
+                break; // Stop the loop once a slot is filled
+              }
+            }
+            if (player) {
+              players.push(player);
+              localStorage.setItem("players", JSON.stringify(players));
+              resetInputs(); 
+              fillwithLocalStorage();
+            }
+          }
+        }
+        if (Position2.value.includes("S") || Position2.value[1]== "W") {
+          console.log("isHere Attak");
+          let box = [];
+          let flag = false;
+          let player;
+          for (let i = 0; i < 5; i++) {
+            let classp = `attak${i}`;
+            let l = document.getElementById(classp);
+            if (l && !l.hasChildNodes()) {
+              flag = true;
+              box.push(classp);
+              player = {
+                id: box[0],
+                name: PlayerName2.value,
+                image: imgPlayerSrc2.value,
+                rate: Rate2.value,
+                position: Position2.value,
+                flagUrl: nationaliteFlag2.value,
+                ClubUrl: ClubLogo2.value,
+                PACstats: PAC2.value,
+                SHOstats: SHO2.value,
+                PASstats: PAS2.value,
+                DRIstats: DRI2.value,
+                DEFstats: DEF2.value,
+                PHYstats: PHY2.value,
+                leagueName :leagueName2.value
+    
+              };
+    
+              eventListenerfornotfill();
+              break; // Stop the loop once a slot is filled
+            }
+          }
+          if (player) {
+            players.push(player);
+            localStorage.setItem("players", JSON.stringify(players));
+            resetInputs(); 
+            fillwithLocalStorage();
+            }
+          if (flag == false) {
+            for (let i = 0; i < 10; i++) {
+              let classp = `remplace${i}`;
+              let l = document.getElementById(classp);
+    
+              if (l && !l.hasChildNodes()) {
+                box.push(classp);
+                player = {
+                  id: box[0],
+                  name: PlayerName2.value,
+                  image: imgPlayerSrc2.value,
+                  rate: Rate2.value,
+                  position: Position2.value,
+                  flagUrl: nationaliteFlag2.value,
+                  ClubUrl: ClubLogo2.value,
+                  PACstats: PAC2.value,
+                  SHOstats: SHO2.value,
+                  PASstats: PAS2.value,
+                  DRIstats: DRI2.value,
+                  DEFstats: DEF2.value,
+                  PHYstats: PHY2.value,
+                  leagueName : leagueName2.value
+                };
+                  
+                eventListenerfornotfill();
+                break; // Stop the loop once a slot is filled
+              }
+            }
+            if (player) {
+              players.push(player);
+              localStorage.setItem("players", JSON.stringify(players));
+              resetInputs(); 
+              fillwithLocalStorage();
+            }
+          }
+        }
+        if (Position2.value.includes("GK")) {
+          console.log("isHere goalKeeper");
+          let box = [];
+          let flag = false;
+          let player;
+            let classp = 'GoalKeeper';
+            let l = document.getElementById(classp);
+          console.log(l)
+            if (l && !l.hasChildNodes()) {
+              flag = true;
+              box.push(classp);
+              player = {
+                id: box[0],
+                name: PlayerName2.value,
+                image: imgPlayerSrc2.value,
+                rate: Rate2.value,
+                position: Position2.value,
+                flagUrl: nationaliteFlag2.value,
+                ClubUrl: ClubLogo2.value,
+                PACstats: PAC2.value,
+                SHOstats: SHO2.value,
+                PASstats: PAS2.value,
+                DRIstats: DRI2.value,
+                DEFstats: DEF2.value,
+                PHYstats: PHY2.value,
+                leagueName :leagueName2.value
+    
+              };
+    
+              eventListenerfornotfill();
+            }
+          
+          if (player) {
+            players.push(player);
+            localStorage.setItem("players", JSON.stringify(players));
+            resetInputs(); 
+            fillwithLocalStorage();
+            }
+          if (flag == false) {
+            for (let i = 0; i < 10; i++) {
+              let classp = `remplace${i}`;
+              let l = document.getElementById(classp);
+    
+              if (l && !l.hasChildNodes()) {
+                box.push(classp);
+                player = {
+                  id: box[0],
+                  name: PlayerName2.value,
+                  image: imgPlayerSrc2.value,
+                  rate: Rate2.value,
+                  position: Position2.value,
+                  flagUrl: nationaliteFlag2.value,
+                  ClubUrl: ClubLogo2.value,
+                  PACstats: PAC2.value,
+                  SHOstats: SHO2.value,
+                  PASstats: PAS2.value,
+                  DRIstats: DRI2.value,
+                  DEFstats: DEF2.value,
+                  PHYstats: PHY2.value,
+                  leagueName : leagueName2.value
+                };
+    
+                eventListenerfornotfill();
+                break; // Stop the loop once a slot is filled
+              }
+            }
+            if (player) {
+              players.push(player);
+              localStorage.setItem("players", JSON.stringify(players));
+              resetInputs(); 
+              fillwithLocalStorage();
+            }
+          }
+          console.log(flag)
+        }
+  console.log(Position2.value[0])
+      }
+    });
+  }
+  
