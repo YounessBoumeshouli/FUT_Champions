@@ -389,3 +389,17 @@ function Form2(){
     });
   }
   
+  function resetInputs() {
+    PlayerName2.value = "";
+    imgPlayerSrc2.value = "";
+    Rate2.value = "";
+    Position2.value = "";
+    nationaliteFlag2.value = "";
+    ClubLogo2.value = "";
+    PAC2.value = "";
+    SHO2.value = "";
+    PAS2.value = "";
+    DRI2.value = "";
+    DEF2.value = "";
+    PHY2.value = "";
+  }
