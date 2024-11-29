@@ -548,4 +548,111 @@ function localStorageFormation() {
     let n = f[2];
     fill(+n, +m, +l);
   }
+  function fill(l, m, n) {
+    let f = `${n}${m}${l}`;
+    localStorage.setItem("formationL", JSON.stringify(f));
+    console.log(f);
+    let x = document.querySelector("#terrain").firstElementChild;
+    x.innerHTML = "";
+    x.className.className = "";
+    x.classList.add("flex");
+    
+    x.classList.add("justify-around");
+    for (let i = 0; i < l; i++) {
+      let div = document.createElement("div");
+      div.id = "attak" + i;
+  
+      div.classList.add("notFill");
+      let Deletebutton = document.createElement("button");
+      Deletebutton.innerText = "X"
+      let idD = `attak${i}`
+      Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+      Deletebutton.classList.add("w-4")
+      Deletebutton.classList.add("h-6")
+      Deletebutton.classList.add("bg-red-400")
+      Deletebutton.classList.add("relative")
+      Deletebutton.classList.add("top-8")
+      x.appendChild(Deletebutton)
+      x.appendChild(div);
+    }
+    let y = document.getElementById("terrain").children[1];
+    y.innerHTML = "";
+    y.className = "";
+    y.classList.add("flex");
+    y.classList.add("justify-between");
+    for (let i = 0; i < m; i++) {
+      let div = document.createElement("div");
+      div.id = "centre" + i;
+  
+      div.classList.add("notFill");
+      let Deletebutton = document.createElement("button");
+      Deletebutton.innerText = "Delete Player"
+      let idD = `centre${i}`
+      Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+      Deletebutton.innerText = "X"
+       Deletebutton.classList.add("w-4")
+      Deletebutton.classList.add("h-6")
+      Deletebutton.classList.add("bg-red-400")
+      Deletebutton.classList.add("relative")
+      Deletebutton.classList.add("top-8")
+      y.appendChild(Deletebutton)
+      y.appendChild(div);
+    }
+    let z = document.getElementById("terrain").children[2];
+    z.innerHTML = "";
+    z.className = "";
+    z.classList.add("flex");
+    z.classList.add("justify-between");
+    for (let i = 0; i < n; i++) {
+      let div = document.createElement("div");
+      div.id = "back" + i;
+  
+      div.classList.add("notFill");
+      let Deletebutton = document.createElement("button");
+      Deletebutton.innerText = "X"
+      Deletebutton.classList.add("w-4")
+      Deletebutton.classList.add("h-6")
+      Deletebutton.classList.add("bg-red-400")
+      let idD = `back${i}`
+      Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+      Deletebutton.classList.add("relative")
+      Deletebutton.classList.add("top-8")
+      z.appendChild(Deletebutton)
+  
+      z.appendChild(div);
+    }
+    let h = document.getElementById("terrain").children[3];
+    h.innerHTML = "";
+    h.className = "";
+    h.classList.add("flex");
+    h.classList.add("justify-center");
+    let divG = document.createElement("div");
+    divG.id = "GoalKeeper";
+    divG.classList.add("notFill");
+    let Deletebutton = document.createElement("button");
+    Deletebutton.innerText = "X"
+    Deletebutton.classList.add("w-4")
+    Deletebutton.classList.add("h-6")
+    Deletebutton.classList.add("bg-red-400")
+    let idD = 'GoalKeeper'
+    Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+      Deletebutton.classList.add("relative")
+      Deletebutton.classList.add("top-8")
+      Deletebutton.classList.add("left-48")
+      h.appendChild(Deletebutton)
+      h.appendChild(divG);
+    l = document.querySelectorAll("#remplace DIV");
+    if (l) {
+      console.log(l.length);
+    } else {
+      console.log("not work");
+    }
+    let i = 0;
+    l.forEach((le) => {
+      le.id = "remplace" + i;
+      le.classList.add("notFill");
+      i++;
+    });
+  }
+  
   
