@@ -722,3 +722,43 @@ function eventListenerfornotfill() {
       
     });
   }
+  function updatePlayer(playerId){
+    formPlayer3.style.display = "block";
+    console.log(playerId)
+    players.forEach(player=>{
+      if(player.id == playerId){
+        PlayerName3.value = player.name
+        Position3.value = player.position;
+        Rate3.value = player.rate
+          imgPlayerSrc3.value = player.image;
+          nationalite3.value = player.flagUrl;
+          nationaliteFlag3.value = player.flagUrl;
+          club3.value = player.ClubUrl;   
+          formPlayer3.addEventListener("submit",function(){
+    if( PlayerName3.value!= ""&&Rate3.value!=""&&nationalite3.value!=""){
+                  players = players.filter(player => player.id !== playerId);
+   let newPlayer = {  
+                    
+  ClubUrl: club3.value,
+  DEFstats: player.DEFstats,
+  DRIstats: player.DEFstats,
+  PACstats: player.PACstats,
+  PASstats: player.PASstats,
+  PHYstats: player.PHYstats,
+  SHOstats: player.SHOstats,
+  flagUrl:  nationaliteFlag3.value,
+  id: playerId,
+  leagueName: leagueName3.value,
+  image: imgPlayerSrc3.value,
+  name: PlayerName3.value,
+  position: Position3.value,
+  rate: Rate3.value
+                  }
+                  players.push(newPlayer)
+                  localStorage.setItem("players", JSON.stringify(players));
+                  fillwithLocalStorage();
+                }
+          })
+      }
+    })
+  }
