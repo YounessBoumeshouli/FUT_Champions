@@ -572,11 +572,29 @@ function updatePlayer(playerId){
         imgPlayerSrc.value = player.image;
         nationalite.value = player.flagUrl;
         nationaliteFlag.value = player.flagUrl;
-        club.value = player.ClubUrl;
-        ClubLogo.value = player.dd;
+        ClubLogo.value = player.ClubUrl;
+        
         formPlayer3.addEventListener("submit",function(){
-              if( PlayerName.value!= ""&&Rate.value!=""&&nationalite.value!=""){
-                
+  if( PlayerName.value!= ""&&Rate.value!=""&&nationalite.value!=""){
+                players = players.filter(player => player.id !== playerId);
+ let newPlayer = {
+                  
+ClubUrl: ClubLogo.value,
+DEFstats: player.DEFstats,
+DRIstats: player.DEFstats,
+PACstats: player.PACstats,
+PASstats: player.PASstats,
+PHYstats: player.PHYstats,
+SHOstats: player.SHOstats,
+flagUrl:  nationaliteFlag.value,
+id: playerId,
+image: imgPlayerSrc.value,
+name: PlayerName.value,
+position: Position.value,
+rate: player.rate
+                }
+                players.push(newPlayer)
+                localStorage.setItem("players", JSON.stringify(players));
               }
         })
     }
