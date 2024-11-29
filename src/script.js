@@ -493,3 +493,16 @@ function search2(response) {
       });
     });
   }
+  fetch("https://younessboumeshouli.github.io/FUT_CHAMPIONS_API/players.json")
+  .then((res) => res.json())
+  .then((response) => {
+    console.log(response);
+    JSON.parse(localStorage.getItem("players")) || [];
+    search(response);
+    search2(response);
+    search3(response);
+    
+    eventListenerfornotfill();
+    Form2()
+  })
+  .catch((error) => console.error("Error:", error));
