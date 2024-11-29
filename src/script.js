@@ -403,3 +403,93 @@ function Form2(){
     DEF2.value = "";
     PHY2.value = "";
   }
+  
+function search2(response) {
+    response.forEach((element) => {
+  
+      document.getElementById("search2").addEventListener("keyup", function (e) {
+        let searchh2 = document.getElementById("search2").value.toLowerCase();
+  console.log(searchh2)
+        if (element.firstName.toLowerCase().includes(searchh2)) {
+          Rate2.value = element.overallRating;
+          PlayerName2.value = element.lastName;
+          Position2.value = element.position.shortLabel;
+          imgPlayerSrc2.value = element.avatarUrl;
+          nationalite2.value = element.nationality.label;
+          nationaliteFlag2.value = element.nationality.imageUrl;
+          club2.value = element.team.label;
+          ClubLogo2.value = element.team.imageUrl;
+          PAC2.value = element.stats.pac.value;
+          SHO2.value = element.stats.sho.value;
+          PAS2.value = element.stats.pas.value;
+          DRI2.value = element.stats.dri.value;
+          DEF2.value = element.stats.def.value;
+          PHY2.value = element.stats.phy.value;
+          leagueName2.value = element.leagueName
+  
+          playerInformations2.innerHTML = `
+         <img class="w-16" src="${element.avatarUrl}" >`;
+        }
+      });
+    });
+  }
+  function search3(response) {
+    response.forEach((element) => {
+      // console.log(element)
+  
+      document.getElementById("search3").addEventListener("keyup", function (e) {
+        let searchh = document.getElementById("search3").value.toLowerCase();
+  console.log(searchh)
+        if (element.firstName.toLowerCase().includes(searchh)) {
+          Rate3.value = element.overallRating;
+          PlayerName3.value = element.lastName;
+          Position3.value = element.position.shortLabel;
+          imgPlayerSrc3.value = element.avatarUrl;
+          nationalite3.value = element.nationality.label;
+          nationaliteFlag3.value = element.nationality.imageUrl;
+          club3.value = element.team.imageUrl;
+          ClubLogo3.value = element.team.imageUrl;
+          PAC3.value = element.stats.pac.value;
+          SHO3.value = element.stats.sho.value;
+          PAS3.value = element.stats.pas.value;
+          DRI3.value = element.stats.dri.value;
+          DEF3.value = element.stats.def.value;
+          PHY3.value = element.stats.phy.value;
+          leagueName3.value= element.leagueName
+          playerInformations3.innerHTML = `
+          
+       <img class="w-16" src="${imgPlayerSrc3.value}" >`;
+        }
+      });
+    });
+  }
+  function search(response) {
+    response.forEach((element) => {
+      // console.log(element)
+  
+      document.getElementById("search").addEventListener("keyup", function (e) {
+        let searchh = document.getElementById("search").value.toLowerCase();
+        console.log("searchh")
+        if (element.firstName.toLowerCase().includes(searchh)) {
+          
+          Rate.value = element.overallRating;
+          PlayerName.value = element.lastName;
+          Position.value = element.position.shortLabel;
+          imgPlayerSrc.value = element.avatarUrl;
+          nationalite.value = element.nationality.label;
+          nationaliteFlag.value = element.nationality.imageUrl;
+          club.value = element.team.label;
+          ClubLogo.value = element.team.imageUrl;
+          PAC.value = element.stats.pac.value;
+          SHO.value = element.stats.sho.value;
+          PAS.value = element.stats.pas.value;
+          DRI.value = element.stats.dri.value;
+          DEF.value = element.stats.def.value;
+          leagueName3.value= element.leagueName
+          PHY.value = element.stats.phy.value;
+          playerInformations.innerHTML = `
+       <img class="w-16" src="${element.avatarUrl}" >`;
+        }
+      });
+    });
+  }
