@@ -541,3 +541,11 @@ form.addEventListener("submit", function (e) {
       break;
   }
 });
+function localStorageFormation() {
+    let f = JSON.parse(localStorage.getItem("formationL")) || "442";
+    let l = f[0];
+    let m = f[1];
+    let n = f[2];
+    fill(+n, +m, +l);
+  }
+  
