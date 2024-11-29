@@ -57,4 +57,17 @@ document.getElementById("fillAuto")
 document.getElementById("addPlayerButton").addEventListener("click", function () {
     formPlayer2.style.display = "block";
     console.log("hello");
-  });git
+  });
+  closeMenu3.addEventListener("click", function () {
+    formPlayer.style.display = "none";
+    formPlayer2.style.display = "none";
+    formPlayer3.style.display = "none";
+  });
+closeMenu.addEventListener("click", function () {
+  formPlayer.style.display = "none";
+  formPlayer2.style.display = "none";
+});
+closeMenu2.addEventListener("click", function () {
+  formPlayer.style.display = "none";
+  formPlayer2.style.display = "none";
+});
