@@ -16,6 +16,66 @@
     
   </div>
 </nav>
+<form class="w-full max-w-2xl mx-auto px-6 py-4 flex-col bg-gray-100 border-t hidden " id="formPlayer3">
+  <div id="playerInformations"></div>
+  <div class="ms-5 flex w-[90%] items-center justify-between mb-5">
+    <input
+      type="search"
+      class="relative m-0 block w-[1px] min-w-0 flex-auto rounded border border-solid border-secondary-500 bg-transparent bg-clip-padding px-3 py-1.5 text-base font-normal text-surface transition duration-300 ease-in-out focus:border-primary focus:text-gray-700 focus:shadow-inset focus:outline-none motion-reduce:transition-none dark:border-white/10 dark:bg-body-dark dark:text-white dark:placeholder:text-neutral-300 dark:autofill:shadow-autofill"
+      placeholder="Search"
+      aria-label="Search"
+      aria-describedby="button-addon2"
+      id="search"
+      />
+      
+    <!--Search icon-->
+    <span
+      class="flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-gray-600 dark:text-white [&>svg]:w-5"
+      id="basic-addon2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor">
+        <path
+          fill-rule="evenodd"
+          d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+          clip-rule="evenodd" />
+      </svg>
+    </span>
+  </div>
+  <div class="flex flex-col items-start mb-4">
+    
+      <div class="flex justify-between w-full">
+        <div>
+          <input type="text" id="PlayerName">
+          <label for="Position" class="block text-gray-700 mb-2">Position</label>
+          <input type="text" id="Position">
+          <input type="text" id="Rate">
+
+        </div>
+      <button id="closeMenu3" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 h-7" >
+          <span class="sr-only">Close menu</span>
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <input type="text" placeholder="the srcImage of the player" id="imgPlayerSrc" class="appearance-none bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-white">
+      <input type="text" placeholder="nationalite of the player" id="nationalite" class="appearance-none bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-white">
+      <input type="hidden" id="nationaliteFlag">
+      <input type="hidden" id="ClubLogo">
+      <input type="hidden"  id="PAC">
+      <input type="hidden"  id="SHO">
+      <input type="hidden"  id="PAS">
+      <input type="hidden"  id="DRI">
+      <input type="hidden"  id="DEF">
+      <input type="hidden"  id="PHY">
+      <input type="text" placeholder="club of this player" id="club" class="appearance-none bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-2 leading-tight focus:outline-none focus:bg-white">
+  </div>
+  <button type="submit"  class="w-full bg-black hover:bg-teal-700 text-white py-2 px-4 rounded">Add The PLayer</button>
+  
+</form>
 <form class="w-full max-w-2xl mx-auto px-6 py-4 flex-col bg-gray-100 border-t hidden " id="formPlayer">
   <div id="playerInformations"></div>
   <div class="ms-5 flex w-[90%] items-center justify-between mb-5">
@@ -137,17 +197,17 @@
   <section class="flex flex-col">
     <section id="Form" class=" flex justify-between">
       
-      <form  id="form" class="flex w-[60%] justify-between">
+      <form  id="form" class="flex w-[40%] justify-between">
 
-        <label for="foramtion" class="block mb-2 text-base font-medium text-gray-900 dark:text-white">Choose Your Formation</label>
-  <select name="foramtion"  id="formation" class="block w-[10%] px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-    <option selected>Choose Freely</option>
+
+  <select name="foramtion"  id="formation" class="block w-[15%] px-4 py-3 text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    
     <option value="442">4 - 4 - 2</option>
     <option value="433">4 - 3 - 3</option>
     <option value="343">3 - 4 - 3</option>
     <option value="523">5 - 2 - 3</option>
   </select>
-  <input type="submit" name="done" value="Done" class="w-[10%]">
+  <input type="submit" name="done" value="Done" class="w-[40%]">
   
       </form>
      

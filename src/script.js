@@ -1,6 +1,8 @@
 let closeMenu = document.getElementById("closeMenu");
 let closeMenu2 = document.getElementById("closeMenu2");
+let closeMenu3 = document.getElementById("closeMenu3");
 let formPlayer = document.getElementById("formPlayer");
+let formPlayer3 = document.getElementById("formPlayer3")
 let formPlayer2 = document.getElementById("formPlayer2");
 let nationaliteFlag = document.getElementById("nationaliteFlag");
 let ClubLogo = document.getElementById("ClubLogo");
@@ -38,6 +40,11 @@ document
   .addEventListener("click", function () {
     formPlayer2.style.display = "block";
     console.log("hello");
+  });
+  closeMenu3.addEventListener("click", function () {
+    formPlayer.style.display = "none";
+    formPlayer2.style.display = "none";
+    formPlayer3.style.display = "none";
   });
 closeMenu.addEventListener("click", function () {
   formPlayer.style.display = "none";
@@ -490,6 +497,7 @@ function fill(l, m, n) {
 }
 
 eventListenerfornotfill();
+
 function handleSubmit(event) {
   event.preventDefault();
 
@@ -524,24 +532,55 @@ function handleSubmit(event) {
   formPlayer.removeEventListener("submit", handleSubmit);
   formPlayer.currentTarget = null;
 }
-
 function eventListenerfornotfill() {
   let NOTFILL = document.querySelectorAll(".notFill");
   NOTFILL.forEach((nf) => {
-    
+    nf.addEventListener("mousedown", event => {
+      if (event.button == 0) { 
+        console.log("is clicked");
+
+        formPlayer.style.display = "block";
+        formPlayer.currentTarget = nf;
+        console.log(nf);
+  
+        formPlayer.addEventListener("submit", removeClass(nf));
+  
+        formPlayer.addEventListener("submit", handleSubmit);
+      }else if (event.button == 2){  
+         console.log(event.target.parentElement)
+         divid = event.target.parentElement.id
+         players.forEach(player=>{
+          if(player.id === divid ){
+            console.log("is in the localStorage")
+            updatePlayer(player.id)
+            
+          }
+         })
+      }});
    
-    nf.addEventListener("click", function () {
-      console.log("is clicked");
-
-      formPlayer.style.display = "block";
-      formPlayer.currentTarget = nf;
-      console.log(nf);
-
-      formPlayer.addEventListener("submit", removeClass(nf));
-
-      formPlayer.addEventListener("submit", handleSubmit);
-    });
+    
   });
+}
+function updatePlayer(playerId){
+  formPlayer3.style.display = "block";
+  console.log(playerId)
+  players.forEach(player=>{
+    if(player.id == playerId){
+      PlayerName.value = player.name
+      Position.value = player.position;
+      Rate.value = player.rate
+        imgPlayerSrc.value = player.image;
+        nationalite.value = player.flagUrl;
+        nationaliteFlag.value = player.flagUrl;
+        club.value = player.ClubUrl;
+        ClubLogo.value = player.dd;
+        formPlayer3.addEventListener("submit",function(){
+              if( PlayerName.value!= ""&&Rate.value!=""&&nationalite.value!=""){
+                
+              }
+        })
+    }
+  })
 }
 function Disable(nf) {
   console.log(nf);
