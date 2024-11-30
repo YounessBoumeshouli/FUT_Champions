@@ -356,7 +356,6 @@ console.log(searchh2)
 }
 function search3(response) {
   response.forEach((element) => {
-    console.log(element.position.shortLabel);
     // console.log(element)
 
     document.getElementById("search3").addEventListener("keyup", function (e) {
@@ -386,7 +385,6 @@ console.log(searchh)
 }
 function search(response) {
   response.forEach((element) => {
-    console.log(element.position.shortLabel);
     // console.log(element)
 
     document.getElementById("search").addEventListener("keyup", function (e) {
@@ -423,6 +421,7 @@ fetch("http://localhost:3000/items")
     search(response);
     search2(response);
     search3(response);
+    CalculChemestry()
     fillwithLocalStorage();
     eventListenerfornotfill();
   })
@@ -467,7 +466,6 @@ form.addEventListener("submit", function (e) {
 });
 function localStorageFormation() {
   let f = JSON.parse(localStorage.getItem("formationL")) || "442";
-  console.log(typeof f);
   let l = f[0];
   let m = f[1];
   let n = f[2];
@@ -482,7 +480,7 @@ function fill(l, m, n) {
   x.innerHTML = "";
   x.className.className = "";
   x.classList.add("flex");
-  x.classList.add("h-12");
+  
   x.classList.add("justify-around");
   for (let i = 0; i < l; i++) {
     let div = document.createElement("div");
@@ -490,10 +488,14 @@ function fill(l, m, n) {
 
     div.classList.add("notFill");
     let Deletebutton = document.createElement("button");
-    Deletebutton.innerText = "Delete Player"
+    Deletebutton.innerText = "X"
     let idD = `attak${i}`
     Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
-
+    Deletebutton.classList.add("w-4")
+    Deletebutton.classList.add("h-6")
+    Deletebutton.classList.add("bg-red-400")
+    Deletebutton.classList.add("relative")
+    Deletebutton.classList.add("top-8")
     x.appendChild(Deletebutton)
     x.appendChild(div);
   }
@@ -511,7 +513,12 @@ function fill(l, m, n) {
     Deletebutton.innerText = "Delete Player"
     let idD = `centre${i}`
     Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
-
+    Deletebutton.innerText = "X"
+     Deletebutton.classList.add("w-4")
+    Deletebutton.classList.add("h-6")
+    Deletebutton.classList.add("bg-red-400")
+    Deletebutton.classList.add("relative")
+    Deletebutton.classList.add("top-8")
     y.appendChild(Deletebutton)
     y.appendChild(div);
   }
@@ -526,10 +533,14 @@ function fill(l, m, n) {
 
     div.classList.add("notFill");
     let Deletebutton = document.createElement("button");
-    Deletebutton.innerText = "Delete Player"
+    Deletebutton.innerText = "X"
+    Deletebutton.classList.add("w-4")
+    Deletebutton.classList.add("h-6")
+    Deletebutton.classList.add("bg-red-400")
     let idD = `back${i}`
     Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
-
+    Deletebutton.classList.add("relative")
+    Deletebutton.classList.add("top-8")
     z.appendChild(Deletebutton)
 
     z.appendChild(div);
@@ -543,10 +554,15 @@ function fill(l, m, n) {
   divG.id = "GoalKeeper";
   divG.classList.add("notFill");
   let Deletebutton = document.createElement("button");
-    Deletebutton.innerText = "Delete Player"
+  Deletebutton.innerText = "X"
+  Deletebutton.classList.add("w-4")
+  Deletebutton.classList.add("h-6")
+  Deletebutton.classList.add("bg-red-400")
     let idD = `GoalKeeper`
     Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
-
+    Deletebutton.classList.add("relative")
+    Deletebutton.classList.add("top-8")
+    Deletebutton.classList.add("left-48")
     h.appendChild(Deletebutton)
   h.appendChild(divG);
   l = document.querySelectorAll("#remplace DIV");
@@ -679,17 +695,17 @@ closeMenu.addEventListener("click", function () {
   formPlayer.removeEventListener("submit", handleSubmit); // Remove the submit listener
   formPlayer.currentTarget = null; // Clear current target
 });
-if (players.length < 1) {
-  let player = {
-    id: "classp",
-    name: "playerName",
-    image: "playerImage",
-    rate: "playerRate",
-  };
+// if (players.length < 1) {
+//   let player = {
+//     id: "classp",
+//     name: "playerName",
+//     image: "playerImage",
+//     rate: "playerRate",
+//   };
 
-  players.push(player);
-  localStorage.setItem("players", JSON.stringify(players));
-}
+//   players.push(player);
+//   localStorage.setItem("players", JSON.stringify(players));
+// }
 function fillwithLocalStorage() {
   let players = JSON.parse(localStorage.getItem("players")) || [];
   players.forEach((element) => {
@@ -787,8 +803,15 @@ window.onload = setupDragAndDrop()
 
 function DeletePlayer(playerID){
   console.log(playerID.id)
-  players = players.filter(player => player.id !== playerID.id);
+let  deletedPlayer = players.filter(player => player.id == playerID.id);
+console.log(deletedPlayer)
+  if(deletedPlayer.length == 0){
+    console.log("the player not exist")
+  }else{
+    players = players.filter(player => player.id !== playerID.id);
   localStorage.setItem("players", JSON.stringify(players));
+  }
+  
 }
 
 document.getElementById("fillAuto").addEventListener("click",function(){
@@ -799,6 +822,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
     if (rPlayer.position[1] == "B") {
       console.log("isHere");
       let box = [];
+      let playerIndex = 0
       let flag = false;
       for (let i = 0; i < formatolL[0]; i++) {
         let classp = `back${i}`;
@@ -810,7 +834,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
           flag = true;
           box.push(classp);
           let player = {
-            id: box[0],
+            id: box[playerIndex],
             name: rPlayer.name,
             image: rPlayer.image,
             rate: rPlayer.rate,
@@ -824,6 +848,8 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
           };
+          playerIndex++
+          console.log(playerIndex)
           players.push(player);
           localStorage.setItem("players", JSON.stringify(players));
           eventListenerfornotfill();
@@ -834,8 +860,9 @@ document.getElementById("fillAuto").addEventListener("click",function(){
       }
     }
     if (rPlayer.position[0] == "C" && rPlayer.position[1] != "B"){
-      console.log("isHere");
+      console.log(formatolL[1]);
       let box = [];
+      let playerIndex = 0
       let flag = false;
       for (let i = 0; i < formatolL[1]; i++) {
         let classp = `centre${i}`;
@@ -847,7 +874,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
           flag = true;
           box.push(classp);
           let player = {
-            id: box[0],
+            id: box[playerIndex],
             name: rPlayer.name,
             image: rPlayer.image,
             rate: rPlayer.rate,
@@ -861,6 +888,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
           };
+          playerIndex++
           players.push(player);
           localStorage.setItem("players", JSON.stringify(players));
           eventListenerfornotfill();
@@ -873,8 +901,11 @@ document.getElementById("fillAuto").addEventListener("click",function(){
     if (rPlayer.position[1] == "W" || rPlayer.position.includes("S")){
       console.log("isHere");
       let box = [];
+      let playerIndex = 0
       let flag = false;
+      console.log(formatolL[2])
       for (let i = 0; i < formatolL[2]; i++) {
+        console.log(i)
         let classp = `attak${i}`;
         let l = document.getElementById(classp);
 
@@ -884,7 +915,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
           flag = true;
           box.push(classp);
           let player = {
-            id: box[0],
+            id: box[playerIndex],
             name: rPlayer.name,
             image: rPlayer.image,
             rate: rPlayer.rate,
@@ -898,6 +929,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
           };
+          playerIndex++
           players.push(player);
           localStorage.setItem("players", JSON.stringify(players));
           eventListenerfornotfill();
@@ -946,3 +978,26 @@ document.getElementById("fillAuto").addEventListener("click",function(){
     }
   })
 })
+function CalculChemestry(){
+  let note = 0
+  let players = JSON.parse(localStorage.getItem("players")) || [];
+
+  players.forEach(player=>{
+    players.forEach(player2=>{
+    if(player2!=player){
+      
+      if(player2.ClubUrl = player.ClubUrl){
+        note+=5
+        console.log(note)
+      }
+      if(player2.flagUrl = player.flagUrl){
+        note+=5
+        console.log(note)
+      }
+    }
+    })
+  })
+  console.log(note)
+}
+console.log(players.length)
+CalculChemestry()

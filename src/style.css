@@ -203,8 +203,8 @@
     }
     #terrain div{
       position: relative;
-      bottom: 10px;
-      right: 0px;
+      bottom: -1px;
+      right: 19px;
     }
     .RateText{
       font-size: 9px;
