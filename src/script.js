@@ -74,27 +74,26 @@ let players = JSON.parse(localStorage.getItem("players")) || [];
 
 formPlayer2button.addEventListener("click", function (e) {
   e.preventDefault();
+ console.log("is clicked again")
  
- 
-  if (
-    PlayerName2.value != "" &&
-    imgPlayerSrc2.value != "" &&
-    Rate2.value != ""
+  if (PlayerName2.value != "" &&imgPlayerSrc2.value != "" &&Rate2.value != ""
   ) {
     console.log(PlayerName2.value);
 
     if (Position2.value[0] == "C" && Position2.value[1] != "B") {
       console.log("isHere");
+      let player ={}
       let box = [];
       let flag = false;
       for (let i = 0; i < 5; i++) {
         let classp = `centre${i}`;
+        console.log("repeat",i)
         let l = document.getElementById(classp);
 
         if (l && !l.hasChildNodes()) {
           flag = true;
           box.push(classp);
-          let player = {
+           player = {
             id: box[0],
             name: PlayerName2.value,
             image: imgPlayerSrc2.value,
@@ -109,21 +108,21 @@ formPlayer2button.addEventListener("click", function (e) {
             DEFstats: DEF2.value,
             PHYstats: PHY2.value,
           };
-          players.push(player);
-          localStorage.setItem("players", JSON.stringify(players));
+         
           eventListenerfornotfill();
         }
       }
       if (flag == false) {
         console.log("isHere");
         let box = [];
+        let player = {}
         for (let i = 0; i < 10; i++) {
           let classp = `remplace${i}`;
           let l = document.getElementById(classp);
 
           if (l && !l.hasChildNodes()) {
             box.push(classp);
-            let player = {
+             player = {
               id: box[0],
               name: PlayerName2.value,
               image: imgPlayerSrc2.value,
@@ -138,16 +137,34 @@ formPlayer2button.addEventListener("click", function (e) {
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
             };
-            players.push(player);
-            localStorage.setItem("players", JSON.stringify(players));
+            
             eventListenerfornotfill();
           }
         }
+        if(flag==true){
+          players.push(player);
+        localStorage.setItem("players", JSON.stringify(players));
+        }
       }
+      players.push(player);
+          localStorage.setItem("players", JSON.stringify(players));
+          PlayerName2.value = ""
+          imgPlayerSrc2.value= ""
+           Rate2.value= ""
+           Position2.value= ""
+           nationaliteFlag2.value= ""
+           ClubLogo2.value= ""
+           PAC2.value= ""
+           SHO2.value= ""
+           PAS2.value= ""
+           DRI2.value= ""
+           DEF2.value= ""
+          PHY2.value= ""
     }
     if (Position2.value[1] == "B") {
       console.log("isHere");
       let box = [];
+      let player = {}
       let flag = false;
       for (let i = 0; i < 5; i++) {
         let classp = `back${i}`;
@@ -156,7 +173,7 @@ formPlayer2button.addEventListener("click", function (e) {
         if (l && !l.hasChildNodes()) {
           flag = true;
           box.push(classp);
-          let player = {
+          player = {
             id: box[0],
             name: PlayerName2.value,
             image: imgPlayerSrc2.value,
@@ -171,11 +188,15 @@ formPlayer2button.addEventListener("click", function (e) {
             DEFstats: DEF2.value,
             PHYstats: PHY2.value,
           };
-          players.push(player);
-          localStorage.setItem("players", JSON.stringify(players));
           eventListenerfornotfill();
         }
       }
+
+      if(flag==true){
+        players.push(player);
+      localStorage.setItem("players", JSON.stringify(players));
+      }
+
       if (flag == false) {
         console.log("isHere");
         let box = [];
@@ -185,7 +206,7 @@ formPlayer2button.addEventListener("click", function (e) {
 
           if (l && !l.hasChildNodes()) {
             box.push(classp);
-            let player = {
+             player = {
               id: box[0],
               name: PlayerName2.value,
               image: imgPlayerSrc2.value,
@@ -193,16 +214,30 @@ formPlayer2button.addEventListener("click", function (e) {
               flagUrl: nationaliteFlag2.value,
               position: Position2.value,
             };
-            players.push(player);
-            localStorage.setItem("players", JSON.stringify(players));
+
             eventListenerfornotfill();
           }
         }
+        players.push(player);
+        localStorage.setItem("players", JSON.stringify(players));
       }
+      PlayerName2.value = ""
+          imgPlayerSrc2.value= ""
+           Rate2.value= ""
+           Position2.value= ""
+           nationaliteFlag2.value= ""
+           ClubLogo2.value= ""
+           PAC2.value= ""
+           SHO2.value= ""
+           PAS2.value= ""
+           DRI2.value= ""
+           DEF2.value= ""
+          PHY2.value= ""
     }
     if (Position2.value[1] == "W" || Position2.value.includes("S")) {
       console.log("isHere");
       let box = [];
+      let player = {}
       let flag = false;
       for (let i = 0; i < 5; i++) {
         let classp = `attak${i}`;
@@ -211,7 +246,7 @@ formPlayer2button.addEventListener("click", function (e) {
         if (l && !l.hasChildNodes()) {
           flag = true;
           box.push(classp);
-          let player = {
+           player = {
             id: box[0],
             name: PlayerName2.value,
             image: imgPlayerSrc2.value,
@@ -226,10 +261,13 @@ formPlayer2button.addEventListener("click", function (e) {
             DEFstats: DEF2.value,
             PHYstats: PHY2.value,
           };
-          players.push(player);
-          localStorage.setItem("players", JSON.stringify(players));
+        
           eventListenerfornotfill();
         }
+      }
+      if(flag==true){
+        players.push(player);
+      localStorage.setItem("players", JSON.stringify(players));
       }
       if (flag == false) {
         console.log("isHere");
@@ -255,16 +293,30 @@ formPlayer2button.addEventListener("click", function (e) {
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
             };
-            players.push(player);
-            localStorage.setItem("players", JSON.stringify(players));
+
             eventListenerfornotfill();
           }
         }
+        players.push(player);
+        localStorage.setItem("players", JSON.stringify(players));
       }
+      PlayerName2.value = ""
+          imgPlayerSrc2.value= ""
+           Rate2.value= ""
+           Position2.value= ""
+           nationaliteFlag2.value= ""
+           ClubLogo2.value= ""
+           PAC2.value= ""
+           SHO2.value= ""
+           PAS2.value= ""
+           DRI2.value= ""
+           DEF2.value= ""
+          PHY2.value= ""
     }
     if (Position2.value.includes("G")) {
       console.log("isHere");
       let box = [];
+      let player = {}
       let flag = false;
 
       let l = document.getElementById("GoalKeeper");
@@ -273,7 +325,7 @@ formPlayer2button.addEventListener("click", function (e) {
         flag = true;
         box.push(l.id);
         console.log("vyuv");
-        let player = {
+         player = {
           id: box[0],
           name: PlayerName2.value,
           image: imgPlayerSrc2.value,
@@ -288,10 +340,11 @@ formPlayer2button.addEventListener("click", function (e) {
           DEFstats: DEF2.value,
           PHYstats: PHY2.value,
         };
-        players.push(player);
-        localStorage.setItem("players", JSON.stringify(players));
+
         eventListenerfornotfill();
       }
+      players.push(player);
+      localStorage.setItem("players", JSON.stringify(players));
       if (flag == false) {
         console.log("isHere");
         let box = [];
@@ -316,12 +369,25 @@ formPlayer2button.addEventListener("click", function (e) {
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
             };
-            players.push(player);
-            localStorage.setItem("players", JSON.stringify(players));
+           
             eventListenerfornotfill();
           }
         }
+        players.push(player);
+        localStorage.setItem("players", JSON.stringify(players));
       }
+      PlayerName2.value = ""
+          imgPlayerSrc2.value= ""
+           Rate2.value= ""
+           Position2.value= ""
+           nationaliteFlag2.value= ""
+           ClubLogo2.value= ""
+           PAC2.value= ""
+           SHO2.value= ""
+           PAS2.value= ""
+           DRI2.value= ""
+           DEF2.value= ""
+          PHY2.value= ""
     }
   }
 });
@@ -370,7 +436,7 @@ console.log(searchh)
         nationaliteFlag3.value = element.nationality.imageUrl;
         club3.value = element.team.imageUrl;
         ClubLogo3.value = element.team.imageUrl;
-        PAC2.value = element.stats.pac.value;
+        PAC3.value = element.stats.pac.value;
         SHO3.value = element.stats.sho.value;
         PAS3.value = element.stats.pas.value;
         DRI3.value = element.stats.dri.value;
@@ -502,6 +568,7 @@ function fill(l, m, n) {
   let y = document.getElementById("terrain").children[1];
   y.innerHTML = "";
   y.className = "";
+
   y.classList.add("flex");
   y.classList.add("justify-around");
   for (let i = 0; i < m; i++) {
@@ -986,14 +1053,14 @@ function CalculChemestry(){
     players.forEach(player2=>{
     if(player2!=player){
       
-      if(player2.ClubUrl = player.ClubUrl){
+      if(player2.ClubUrl == player.ClubUrl){
         note+=5
-        console.log(note)
+        // console.log(player2.name,player.name)
       }
-      if(player2.flagUrl = player.flagUrl){
+      if(player2.flagUrl == player.flagUrl){
         note+=5
-        console.log(note)
-      }
+        // console.log(player2.name,player.name)  
+           }
     }
     })
   })
