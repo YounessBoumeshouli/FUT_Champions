@@ -1042,3 +1042,7 @@ function eventListenerfornotfill() {
     `
     console.log(note)
   }
+  console.log(players.length)
+CalculChemestry()
+// function 
+console.log(players.length)
