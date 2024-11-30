@@ -1014,3 +1014,31 @@ function eventListenerfornotfill() {
        }
      })
    })
+   function CalculChemestry(){
+    let note = 0
+    let players = JSON.parse(localStorage.getItem("players")) || [];
+  
+    players.forEach(player=>{
+      players.forEach(player2=>{
+      if(player2!=player){
+        
+        if(player2.ClubUrl == player.ClubUrl){
+          note+=5
+          console.log(player2.name,player.name)
+        }
+        if(player2.flagUrl == player.flagUrl){
+          note+=5
+          console.log(player2.name,player.name)  
+             }
+        if(player2.leagueName == player.leagueName){
+              note+=5
+              console.log(player2.leagueName,player.leagueName)  
+                 }
+      }
+      })
+    })
+    document.getElementById("chemestry").innerHTML = `
+    <h1>${note}</h1>
+    `
+    console.log(note)
+  }
