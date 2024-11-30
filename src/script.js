@@ -814,4 +814,23 @@ function eventListenerfornotfill() {
       }
     });
   }
+  function DeletePlayer(playerID) {
+    console.log(playerID);
+  
+    let deletedPlayer = players.filter(player => player.id == playerID.id);
+    console.log(deletedPlayer);
+  
+    if (deletedPlayer.length == 0) {
+      console.log("The player does not exist");
+    } else {
+      players = players.filter(player => player.id !== playerID.id);
+      
+      localStorage.setItem("players", JSON.stringify(players));
+      
+      const playerElement = document.getElementById(`${playerID.id}`);
+      if (playerElement) {
+        playerElement.innerHTML = "";
+      }
+    }
+  }
   
