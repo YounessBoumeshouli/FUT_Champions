@@ -574,12 +574,28 @@ video {
   position: relative;
 }
 
-.left-3 {
-  left: 0.75rem;
-}
-
 .top-7 {
   top: 1.75rem;
+}
+
+.top-8 {
+  top: 2rem;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.right-10 {
+  right: 2.5rem;
+}
+
+.left-10 {
+  left: 2.5rem;
+}
+
+.z-10 {
+  z-index: 10;
 }
 
 .m-0 {
@@ -599,12 +615,8 @@ video {
   margin-bottom: 1rem;
 }
 
-.ml-4 {
-  margin-left: 1rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .ms-2 {
@@ -613,14 +625,6 @@ video {
 
 .ms-5 {
   margin-inline-start: 1.25rem;
-}
-
-.mt-3 {
-  margin-top: 0.75rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
 }
 
 .block {
@@ -647,10 +651,6 @@ video {
   height: 3rem;
 }
 
-.h-20 {
-  height: 5rem;
-}
-
 .h-6 {
   height: 1.5rem;
 }
@@ -659,44 +659,36 @@ video {
   height: 1.75rem;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-16 {
   width: 4rem;
-}
-
-.w-28 {
-  width: 7rem;
-}
-
-.w-3 {
-  width: 0.75rem;
 }
 
 .w-6 {
   width: 1.5rem;
 }
 
-.w-9\/12 {
-  width: 75%;
+.w-\[15\%\] {
+  width: 15%;
 }
 
 .w-\[1px\] {
   width: 1px;
 }
 
-.w-\[30\%\] {
-  width: 30%;
+.w-\[40\%\] {
+  width: 40%;
 }
 
-.w-\[80\%\] {
-  width: 80%;
+.w-\[90\%\] {
+  width: 90%;
 }
 
 .w-full {
   width: 100%;
+}
+
+.w-\[0\%\] {
+  width: 0%;
 }
 
 .min-w-0 {
@@ -821,6 +813,15 @@ video {
   background-color: rgb(250 250 250 / var(--tw-bg-opacity, 1));
 }
 
+.bg-slate-950 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 6 23 / var(--tw-bg-opacity, 1));
+}
+
+.to-rose-800 {
+  --tw-gradient-to: #9f1239 var(--tw-gradient-to-position);
+}
+
 .bg-clip-padding {
   background-clip: padding-box;
 }
@@ -868,18 +869,6 @@ video {
   text-align: center;
 }
 
-.text-\[10px\] {
-  font-size: 10px;
-}
-
-.text-\[12px\] {
-  font-size: 12px;
-}
-
-.text-\[20px\] {
-  font-size: 20px;
-}
-
 .text-\[8px\] {
   font-size: 8px;
 }
@@ -892,10 +881,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-
-.font-medium {
-  font-weight: 500;
 }
 
 .font-normal {
@@ -944,6 +929,10 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition {

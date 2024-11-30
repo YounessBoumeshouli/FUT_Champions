@@ -15,29 +15,43 @@ let PAS = document.getElementById("PAS");
 let DRI = document.getElementById("DRI");
 let DEF = document.getElementById("DEF");
 let PHY = document.getElementById("PHY");
-let PAC2 = document.getElementById("PAC");
-let SHO2 = document.getElementById("SHO");
-let PAS2 = document.getElementById("PAS");
-let DRI2 = document.getElementById("DRI");
-let DEF2 = document.getElementById("DEF");
-let PHY2 = document.getElementById("PHY");
+let PAC2 = document.getElementById("PAC2");
+let SHO2 = document.getElementById("SHO2");
+let PAS2 = document.getElementById("PAS2");
+let DRI2 = document.getElementById("DRI2");
+let DEF2 = document.getElementById("DEF2");
+let PHY2 = document.getElementById("PHY2");
+let PAC3 = document.getElementById("PAC3");
+let SHO3 = document.getElementById("SHO3");
+let PAS3 = document.getElementById("PAS3");
+let DRI3 = document.getElementById("DRI3");
+let DEF3 = document.getElementById("DEF3");
+let PHY3 = document.getElementById("PHY3");
 let PlayerName = document.getElementById("PlayerName");
+let PlayerName3 = document.getElementById("PlayerName3");
 let imgPlayerSrc = document.getElementById("imgPlayerSrc");
 let nationalite = document.getElementById("nationalite");
 let Position2 = document.getElementById("Position2");
 let PlayerName2 = document.getElementById("PlayerName2");
 let imgPlayerSrc2 = document.getElementById("imgPlayerSrc2");
 let nationalite2 = document.getElementById("nationalite2");
+let ClubLogo3 =document.getElementById("ClubLogo3")
+let  club3 =document.getElementById("club3")
+let nationaliteFlag3 = document.getElementById("nationaliteFlag3")
+let nationalite3= document.getElementById("nationalite3")
+let imgPlayerSrc3=document.getElementById("imgPlayerSrc3")
+let Position3 = document.getElementById("Position3")
+let Rate3 = document.getElementById("Rate3")
 let club = document.getElementById("club");
 let Rate = document.getElementById("Rate");
 let club2 = document.getElementById("club2");
 let Rate2 = document.getElementById("Rate2");
 let formPlayer2button = document.getElementById("formPlayer2");
+let playerInformations3 = document.getElementById("playerInformations3")
 let playerInformations = document.getElementById("playerInformations");
 let playerInformations2 = document.getElementById("playerInformations2");
-document
-  .getElementById("addPlayerButton")
-  .addEventListener("click", function () {
+document.getElementById("fillAuto")
+document.getElementById("addPlayerButton").addEventListener("click", function () {
     formPlayer2.style.display = "block";
     console.log("hello");
   });
@@ -60,8 +74,8 @@ let players = JSON.parse(localStorage.getItem("players")) || [];
 
 formPlayer2button.addEventListener("click", function (e) {
   e.preventDefault();
-  let infos = [];
-  console.log("is clicked");
+ 
+ 
   if (
     PlayerName2.value != "" &&
     imgPlayerSrc2.value != "" &&
@@ -318,7 +332,7 @@ function search2(response) {
 
     document.getElementById("search2").addEventListener("keyup", function (e) {
       let searchh2 = document.getElementById("search2").value.toLowerCase();
-
+console.log(searchh2)
       if (element.firstName.toLowerCase().includes(searchh2)) {
         Rate2.value = element.overallRating;
         PlayerName2.value = element.lastName;
@@ -340,7 +354,36 @@ function search2(response) {
     });
   });
 }
+function search3(response) {
+  response.forEach((element) => {
+    console.log(element.position.shortLabel);
+    // console.log(element)
 
+    document.getElementById("search3").addEventListener("keyup", function (e) {
+      let searchh = document.getElementById("search3").value.toLowerCase();
+console.log(searchh)
+      if (element.firstName.toLowerCase().includes(searchh)) {
+        Rate3.value = element.overallRating;
+        PlayerName3.value = element.lastName;
+        Position3.value = element.position.shortLabel;
+        imgPlayerSrc3.value = element.avatarUrl;
+        nationalite3.value = element.nationality.label;
+        nationaliteFlag3.value = element.nationality.imageUrl;
+        club3.value = element.team.imageUrl;
+        ClubLogo3.value = element.team.imageUrl;
+        PAC2.value = element.stats.pac.value;
+        SHO3.value = element.stats.sho.value;
+        PAS3.value = element.stats.pas.value;
+        DRI3.value = element.stats.dri.value;
+        DEF3.value = element.stats.def.value;
+        PHY3.value = element.stats.phy.value;
+        playerInformations3.innerHTML = `
+        
+     <img class="w-16" src="${nationaliteFlag3.value}" >`;
+      }
+    });
+  });
+}
 function search(response) {
   response.forEach((element) => {
     console.log(element.position.shortLabel);
@@ -348,8 +391,9 @@ function search(response) {
 
     document.getElementById("search").addEventListener("keyup", function (e) {
       let searchh = document.getElementById("search").value.toLowerCase();
-
+      console.log("searchh")
       if (element.firstName.toLowerCase().includes(searchh)) {
+        
         Rate.value = element.overallRating;
         PlayerName.value = element.lastName;
         Position.value = element.position.shortLabel;
@@ -358,7 +402,7 @@ function search(response) {
         nationaliteFlag.value = element.nationality.imageUrl;
         club.value = element.team.label;
         ClubLogo.value = element.team.imageUrl;
-        PAC2.value = element.stats.pac.value;
+        PAC.value = element.stats.pac.value;
         SHO.value = element.stats.sho.value;
         PAS.value = element.stats.pas.value;
         DRI.value = element.stats.dri.value;
@@ -378,6 +422,7 @@ fetch("http://localhost:3000/items")
     JSON.parse(localStorage.getItem("players")) || [];
     search(response);
     search2(response);
+    search3(response);
     fillwithLocalStorage();
     eventListenerfornotfill();
   })
@@ -444,8 +489,12 @@ function fill(l, m, n) {
     div.id = "attak" + i;
 
     div.classList.add("notFill");
-  
-  
+    let Deletebutton = document.createElement("button");
+    Deletebutton.innerText = "Delete Player"
+    let idD = `attak${i}`
+    Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+
+    x.appendChild(Deletebutton)
     x.appendChild(div);
   }
   let y = document.getElementById("terrain").children[1];
@@ -458,6 +507,12 @@ function fill(l, m, n) {
     div.id = "centre" + i;
 
     div.classList.add("notFill");
+    let Deletebutton = document.createElement("button");
+    Deletebutton.innerText = "Delete Player"
+    let idD = `centre${i}`
+    Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+
+    y.appendChild(Deletebutton)
     y.appendChild(div);
   }
   let z = document.getElementById("terrain").children[2];
@@ -470,6 +525,12 @@ function fill(l, m, n) {
     div.id = "back" + i;
 
     div.classList.add("notFill");
+    let Deletebutton = document.createElement("button");
+    Deletebutton.innerText = "Delete Player"
+    let idD = `back${i}`
+    Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+
+    z.appendChild(Deletebutton)
 
     z.appendChild(div);
   }
@@ -481,6 +542,12 @@ function fill(l, m, n) {
   let divG = document.createElement("div");
   divG.id = "GoalKeeper";
   divG.classList.add("notFill");
+  let Deletebutton = document.createElement("button");
+    Deletebutton.innerText = "Delete Player"
+    let idD = `GoalKeeper`
+    Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
+
+    h.appendChild(Deletebutton)
   h.appendChild(divG);
   l = document.querySelectorAll("#remplace DIV");
   if (l) {
@@ -566,20 +633,20 @@ function updatePlayer(playerId){
   console.log(playerId)
   players.forEach(player=>{
     if(player.id == playerId){
-      PlayerName.value = player.name
-      Position.value = player.position;
-      Rate.value = player.rate
-        imgPlayerSrc.value = player.image;
-        nationalite.value = player.flagUrl;
-        nationaliteFlag.value = player.flagUrl;
-        ClubLogo.value = player.ClubUrl;
+      PlayerName3.value = player.name
+      Position3.value = player.position;
+      Rate3.value = player.rate
+        imgPlayerSrc3.value = player.image;
+        nationalite3.value = player.flagUrl;
+        nationaliteFlag3.value = player.flagUrl;
+        club3.value = player.ClubUrl;
         
         formPlayer3.addEventListener("submit",function(){
-  if( PlayerName.value!= ""&&Rate.value!=""&&nationalite.value!=""){
+  if( PlayerName3.value!= ""&&Rate3.value!=""&&nationalite3.value!=""){
                 players = players.filter(player => player.id !== playerId);
  let newPlayer = {
                   
-ClubUrl: ClubLogo.value,
+ClubUrl: club.value,
 DEFstats: player.DEFstats,
 DRIstats: player.DEFstats,
 PACstats: player.PACstats,
@@ -663,6 +730,7 @@ function fillwithLocalStorage() {
     <p class="text-[8px]">DEF ${element.DEFstats}</p>
     <p class="text-[8px]">PHY ${element.PHYstats}</p>
   </section>
+
 </section>
 
   `;
@@ -674,7 +742,7 @@ function fillwithLocalStorage() {
 fillwithLocalStorage();
 
 function removeClass(nf) {
-  console.log(nf);
+
 
   nf.className = "";
 }
@@ -716,3 +784,165 @@ const handleDrop = (e, card) => {
  
 }
 window.onload = setupDragAndDrop()
+
+function DeletePlayer(playerID){
+  console.log(playerID.id)
+  players = players.filter(player => player.id !== playerID.id);
+  localStorage.setItem("players", JSON.stringify(players));
+}
+
+document.getElementById("fillAuto").addEventListener("click",function(){
+ let remplacents = players.filter(player => player.id.includes("remplace"));
+ let formatolL = JSON.parse(localStorage.getItem("formationL")) || "442";
+  console.log(remplacents)
+  remplacents.forEach(rPlayer=>{
+    if (rPlayer.position[1] == "B") {
+      console.log("isHere");
+      let box = [];
+      let flag = false;
+      for (let i = 0; i < formatolL[0]; i++) {
+        let classp = `back${i}`;
+        let l = document.getElementById(classp);
+
+        if (l && !l.hasChildNodes()) {
+          players = players.filter(player => player.id !== rPlayer.id);
+          localStorage.setItem("players", JSON.stringify(players));
+          flag = true;
+          box.push(classp);
+          let player = {
+            id: box[0],
+            name: rPlayer.name,
+            image: rPlayer.image,
+            rate: rPlayer.rate,
+            position: rPlayer.position,
+            flagUrl: rPlayer.flagUrl,
+            ClubUrl: rPlayer.ClubUrl,
+            PACstats: rPlayer.PACstats,
+            SHOstats: rPlayer.SHOstats,
+            PASstats: rPlayer.PASstats,
+            DRIstats: rPlayer.DRIstats,
+            DEFstats: rPlayer.DEFstats,
+            PHYstats: rPlayer.PHYstats,
+          };
+          players.push(player);
+          localStorage.setItem("players", JSON.stringify(players));
+          eventListenerfornotfill();
+        }
+      }
+      if (flag == false) {
+        console.log("the post is full")
+      }
+    }
+    if (rPlayer.position[0] == "C" && rPlayer.position[1] != "B"){
+      console.log("isHere");
+      let box = [];
+      let flag = false;
+      for (let i = 0; i < formatolL[1]; i++) {
+        let classp = `centre${i}`;
+        let l = document.getElementById(classp);
+
+        if (l && !l.hasChildNodes()) {
+          players = players.filter(player => player.id !== rPlayer.id);
+          localStorage.setItem("players", JSON.stringify(players));
+          flag = true;
+          box.push(classp);
+          let player = {
+            id: box[0],
+            name: rPlayer.name,
+            image: rPlayer.image,
+            rate: rPlayer.rate,
+            position: rPlayer.position,
+            flagUrl: rPlayer.flagUrl,
+            ClubUrl: rPlayer.ClubUrl,
+            PACstats: rPlayer.PACstats,
+            SHOstats: rPlayer.SHOstats,
+            PASstats: rPlayer.PASstats,
+            DRIstats: rPlayer.DRIstats,
+            DEFstats: rPlayer.DEFstats,
+            PHYstats: rPlayer.PHYstats,
+          };
+          players.push(player);
+          localStorage.setItem("players", JSON.stringify(players));
+          eventListenerfornotfill();
+        }
+      }
+      if (flag == false) {
+        console.log("the post is full")
+      }
+    }
+    if (rPlayer.position[1] == "W" || rPlayer.position.includes("S")){
+      console.log("isHere");
+      let box = [];
+      let flag = false;
+      for (let i = 0; i < formatolL[2]; i++) {
+        let classp = `attak${i}`;
+        let l = document.getElementById(classp);
+
+        if (l && !l.hasChildNodes()) {
+          players = players.filter(player => player.id !== rPlayer.id);
+          localStorage.setItem("players", JSON.stringify(players));
+          flag = true;
+          box.push(classp);
+          let player = {
+            id: box[0],
+            name: rPlayer.name,
+            image: rPlayer.image,
+            rate: rPlayer.rate,
+            position: rPlayer.position,
+            flagUrl: rPlayer.flagUrl,
+            ClubUrl: rPlayer.ClubUrl,
+            PACstats: rPlayer.PACstats,
+            SHOstats: rPlayer.SHOstats,
+            PASstats: rPlayer.PASstats,
+            DRIstats: rPlayer.DRIstats,
+            DEFstats: rPlayer.DEFstats,
+            PHYstats: rPlayer.PHYstats,
+          };
+          players.push(player);
+          localStorage.setItem("players", JSON.stringify(players));
+          eventListenerfornotfill();
+        }
+      }
+      if (flag == false) {
+        console.log("the post is full")
+      }
+    }
+    if (rPlayer.position.includes("G")) {
+      console.log("isHere");
+      let box = [];
+      let flag = false;
+      
+        let classp = `GoalKeeper`;
+        let l = document.getElementById(classp);
+
+        if (l && !l.hasChildNodes()) {
+          players = players.filter(player => player.id !== rPlayer.id);
+          localStorage.setItem("players", JSON.stringify(players));
+          flag = true;
+          box.push(classp);
+          let player = {
+            id: box[0],
+            name: rPlayer.name,
+            image: rPlayer.image,
+            rate: rPlayer.rate,
+            position: rPlayer.position,
+            flagUrl: rPlayer.flagUrl,
+            ClubUrl: rPlayer.ClubUrl,
+            PACstats: rPlayer.PACstats,
+            SHOstats: rPlayer.SHOstats,
+            PASstats: rPlayer.PASstats,
+            DRIstats: rPlayer.DRIstats,
+            DEFstats: rPlayer.DEFstats,
+            PHYstats: rPlayer.PHYstats,
+          };
+          players.push(player);
+          localStorage.setItem("players", JSON.stringify(players));
+          eventListenerfornotfill();
+        }
+      
+      if (flag == false) {
+        console.log("the post is full")
+      }
+    }
+  })
+})
