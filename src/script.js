@@ -767,3 +767,51 @@ function eventListenerfornotfill() {
     formPlayer.removeEventListener("submit", handleSubmit); // Remove the submit listener
     formPlayer.currentTarget = null; // Clear current target
   });
+  function fillwithLocalStorage() {
+    let players = JSON.parse(localStorage.getItem("players")) || [];
+    players.forEach((element) => {
+      
+      let thisdiv = document.getElementById(element.id);
+     
+      if (thisdiv) {
+        
+        thisdiv.setAttribute("draggable", true);
+        thisdiv.addEventListener("dragstart",function(e){
+          console.log('hello')
+          
+        })
+        thisdiv.innerHTML = `
+   <section   class="sectionRemplace flex ">
+    <span  class="relative spanRomplacent">
+      <p class=" text-yellow-300 text-center RateText">${element.rate}</p>
+      <p class=" text-center text-white playerPostion">${element.position}</p>
+      <img class="flags" src="${element.flagUrl}" alt="Flag">
+      <img class="logos" src="${element.ClubUrl}" alt="Club">
+    </span>
+    <section>
+      <img class="imageCard" src="${element.image}" alt="Player">
+    </section>
+  </section>
+  
+  <h1 class=" text-center text-white playerName">${element.name}</h1>
+  
+  <section class="flex  text-yellow-400 spanStats">
+    <section class="firstStats">
+      <p class="text-[8px]">PAC ${element.PACstats}</p>
+      <p class="text-[8px]">SHO ${element.SHOstats}</p>
+      <p class="text-[8px]">PAS ${element.PASstats}</p>
+    </section>
+    <section class=" firstStats">
+      <p class="text-[8px]">DRI ${element.DRIstats}</p>
+      <p class="text-[8px]">DEF ${element.DEFstats}</p>
+      <p class="text-[8px]">PHY ${element.PHYstats}</p>
+    </section>
+  
+  </section>
+  
+    `;
+    
+      }
+    });
+  }
+  
