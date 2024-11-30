@@ -833,4 +833,184 @@ function eventListenerfornotfill() {
       }
     }
   }
-  
+  document.getElementById("fillAuto").addEventListener("click",function(){
+    let remplacents = players.filter(player => player.id[0]=="r");
+    let formatolL = JSON.parse(localStorage.getItem("formationL")) || "442";
+     console.log(remplacents)
+     remplacents.forEach(rPlayer=>{
+       
+       if (rPlayer.position[1] == "B") {
+         console.log("isHere");
+         let box = [];
+         let playerIndex = 0
+         let flag = false;
+         for (let i = 0; i < formatolL[0]; i++) {
+           let classp = `back${i}`;
+           let l = document.getElementById(classp);
+   
+           if (l && !l.hasChildNodes()&&flag==false) {
+             document.getElementById(rPlayer.id).innerHTML = ""
+   
+             players = players.filter(player => player.id !== rPlayer.id);
+             localStorage.setItem("players", JSON.stringify(players));
+             flag = true;
+             box.push(classp);
+             let player = {
+               id: box[playerIndex],
+               name: rPlayer.name,
+               image: rPlayer.image,
+               rate: rPlayer.rate,
+               position: rPlayer.position,
+               flagUrl: rPlayer.flagUrl,
+               ClubUrl: rPlayer.ClubUrl,
+               PACstats: rPlayer.PACstats,
+               leagueName: leagueName.value,
+               SHOstats: rPlayer.SHOstats,
+               PASstats: rPlayer.PASstats,
+               DRIstats: rPlayer.DRIstats,
+               DEFstats: rPlayer.DEFstats,
+               PHYstats: rPlayer.PHYstats,
+             };
+             playerIndex++
+             console.log(playerIndex)
+             players.push(player);
+             localStorage.setItem("players", JSON.stringify(players));
+             eventListenerfornotfill();
+             fillwithLocalStorage();
+           }
+         }
+         if (flag == false) {
+           console.log("the post is full")
+         }
+       }
+       if (rPlayer.position[0] == "C" && rPlayer.position[1] != "B"){
+         console.log(formatolL[1]);
+         let box = [];
+         let playerIndex = 0
+         let flag = false;
+         for (let i = 0; i < formatolL[1]; i++) {
+           let classp = `centre${i}`;
+           let l = document.getElementById(classp);
+   
+           if (l && !l.hasChildNodes()&&flag==false) {
+             document.getElementById(rPlayer.id).innerHTML = ""
+   
+             players = players.filter(player => player.id !== rPlayer.id);
+             localStorage.setItem("players", JSON.stringify(players));
+             flag = true;
+             box.push(classp);
+             let player = {
+               id: box[playerIndex],
+               name: rPlayer.name,
+               image: rPlayer.image,
+               rate: rPlayer.rate,
+               position: rPlayer.position,
+               flagUrl: rPlayer.flagUrl,
+               ClubUrl: rPlayer.ClubUrl,
+               leagueName: leagueName.value,
+               PACstats: rPlayer.PACstats,
+               SHOstats: rPlayer.SHOstats,
+               PASstats: rPlayer.PASstats,
+               DRIstats: rPlayer.DRIstats,
+               DEFstats: rPlayer.DEFstats,
+               PHYstats: rPlayer.PHYstats,
+             };
+             playerIndex++
+             players.push(player);
+             localStorage.setItem("players", JSON.stringify(players));
+             eventListenerfornotfill();
+             fillwithLocalStorage();
+           }
+         }
+         if (flag == false) {
+           console.log("the post is full")
+         }
+       }
+       if (rPlayer.position[1] == "W" || rPlayer.position.includes("S")){
+         console.log("isHere");
+         let box = [];
+         let playerIndex = 0
+         let flag = false;
+         console.log(formatolL[2])
+         for (let i = 0; i < formatolL[2]; i++) {
+           console.log(i)
+           let classp = `attak${i}`;
+           let l = document.getElementById(classp);
+   
+           if (l && !l.hasChildNodes()&&flag==false) {
+             document.getElementById(rPlayer.id).innerHTML = ""
+   
+             players = players.filter(player => player.id !== rPlayer.id);
+             localStorage.setItem("players", JSON.stringify(players));
+             flag = true;
+             box.push(classp);
+             let player = {
+               id: box[playerIndex],
+               name: rPlayer.name,
+               image: rPlayer.image,
+               rate: rPlayer.rate,
+               position: rPlayer.position,
+               flagUrl: rPlayer.flagUrl,
+               ClubUrl: rPlayer.ClubUrl,
+               PACstats: rPlayer.PACstats,
+               leagueName: leagueName.value,
+               SHOstats: rPlayer.SHOstats,
+               PASstats: rPlayer.PASstats,
+               DRIstats: rPlayer.DRIstats,
+               DEFstats: rPlayer.DEFstats,
+               PHYstats: rPlayer.PHYstats,
+             };
+             playerIndex++
+             players.push(player);
+             localStorage.setItem("players", JSON.stringify(players));
+             eventListenerfornotfill();
+             fillwithLocalStorage();
+           }
+         }
+         if (flag == false) {
+           console.log("the post is full")
+         }
+       }
+       if (rPlayer.position.includes("G")) {
+         console.log("isHere");
+         let box = [];
+         let flag = false;
+         
+           let classp = `GoalKeeper`;
+           let l = document.getElementById(classp);
+   
+           if (l && !l.hasChildNodes()&&flag==false) {
+             console.log(rPlayer.id)
+             document.getElementById(rPlayer.id).innerHTML = ""
+             players = players.filter(player => player.id !== rPlayer.id);
+             localStorage.setItem("players", JSON.stringify(players));
+             flag = true;
+             box.push(classp);
+             let player = {
+               id: box[0],
+               name: rPlayer.name,
+               image: rPlayer.image,
+               rate: rPlayer.rate,
+               position: rPlayer.position,
+               flagUrl: rPlayer.flagUrl,
+               ClubUrl: rPlayer.ClubUrl,
+               PACstats: rPlayer.PACstats,
+               SHOstats: rPlayer.SHOstats,
+               leagueName: leagueName.value,
+               PASstats: rPlayer.PASstats,
+               DRIstats: rPlayer.DRIstats,
+               DEFstats: rPlayer.DEFstats,
+               PHYstats: rPlayer.PHYstats,
+             };
+             players.push(player);
+             localStorage.setItem("players", JSON.stringify(players));
+             eventListenerfornotfill();
+             fillwithLocalStorage();
+           }
+         
+         if (flag == false) {
+           console.log("the post is full")
+         }
+       }
+     })
+   })
