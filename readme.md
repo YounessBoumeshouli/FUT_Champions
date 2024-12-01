@@ -1,6 +1,6 @@
 # FORMATIONRANK - GESTION DES FORMATIONS
 
-![Logo de l'application](assets/images/image.jpg "FormationRank App")
+![Logo de l'application](src/assets/images/image.jpg "FormationRank App")
 
 ## Présentation du Projet
 FORMATIONRANK est une application qui permet à l'utilisateur de choisir une formation tactique, d'ajouter des joueurs dans les positions appropriées, et de visualiser la note de chimie entre les joueurs.
