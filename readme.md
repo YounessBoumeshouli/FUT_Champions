@@ -1,6 +1,6 @@
 # FORMATIONRANK - GESTION DES FORMATIONS
 ## Présentation du Projet
-FORMATIONRANK est une application qui permet l'utilisateur de choisi quelque formation puis l'ajout des jeurs dans le bon touche ou bien dans le formation , avec l'affichage de la note de chimie entre les joueurs
+FORMATIONRANK est une application qui permet à l'utilisateur de choisir une formation tactique, d'ajouter des joueurs dans les positions appropriées, et de visualiser la note de chimie entre les joueurs.
 
 ## Fonctionnalités Principales
 

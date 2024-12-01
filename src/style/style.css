@@ -10,7 +10,7 @@
   
   }
   body{
-    background-color :#2d3748;
+    background-color :#FFDAB9;
   }
   #terrain div div,
   #remplace div {
@@ -30,7 +30,7 @@
     z-index: 10;
 }
 .add-player-button {
-    background-color: #2d3748; /* Dark slate background */
+    background-color: #F0C987; /* Dark slate background */
     color: #fff; /* White text color */
     width: 120px; /* Wider for better usability */
     height: 40px; /* Standard height */
