@@ -1,11 +1,10 @@
-/* Main Terrain */
 #terrain {
     background-image: url("https://raw.githubusercontent.com/aymanebenhima/FUT-Champ-Ultimate-Team-Assets/refs/heads/main/src/assets/img/stadium_background.webp");
     background-size: contain;
     background-repeat: no-repeat;
     width: 70%;
     height: 80%;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto; 
     position: relative; 
   
   }
@@ -17,12 +16,12 @@
     background-image: url("https://cdn3.futbin.com/content/fifa25/img/cards/hd/161_prime_hero.png?fm=png&ixlib=java-2.1.0&verzion=4&w=644&s=b92abed58187f4df4893c23cfa1857aa");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 200px; /* Default card size */
+    height: 200px;
     width: 150px;
-    border-radius: 10px; /* Optional: Smooth corners for a modern look */
-    margin: 10px auto; /* Center divs and add spacing */
-    box-shadow: 0 4px 6px rgba(79, 11, 70, 0.1); /* Subtle shadow for better appearance */
-    position: relative; /* Allows precise positioning if necessary */
+    border-radius: 10px;
+    margin: 10px auto; 
+    box-shadow: 0 4px 6px rgba(79, 11, 70, 0.1); 
+    position: relative;
   }
   #formPlayer,#formPlayer2,#formPlayer3{
     position: relative;
@@ -30,44 +29,44 @@
     z-index: 10;
 }
 .add-player-button {
-    background-color: #F0C987; /* Dark slate background */
-    color: #fff; /* White text color */
-    width: 120px; /* Wider for better usability */
-    height: 40px; /* Standard height */
-    display: flex; /* Center content */
+    background-color: #F0C987; 
+    color: #fff;
+    width: 120px;
+    height: 40px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 8px; /* Rounded corners */
-    font-size: 16px; /* Readable text size */
-    font-weight: 600; /* Bold text */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: all 0.3s ease; /* Smooth hover effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px;
+    font-size: 16px; 
+    font-weight: 600;
+    cursor: pointer; 
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
   }
   
   .add-player-button:hover {
-    background-color: #4a5568; /* Slightly lighter shade on hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly deeper shadow */
-    transform: translateY(-2px); /* Lift effect */
-  }
+    background-color: #4a5568;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    }
   
   .add-player-button:active {
-    background-color: #1a202c; /* Darker color on click */
-    transform: translateY(0); /* Reset lift */
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    background-color: #1a202c; 
+    transform: translateY(0); 
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1); 
   }
-/* Fullscreen overlay */
+
 #formContainer {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
-    inset: 0; /* Fullscreen */
-    background-color: rgba(0, 0, 0, 0.5); /* Transparent black overlay */
-    z-index: 50; /* Ensure it appears above other elements */
+    inset: 0; 
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50; 
     justify-content: center;
     align-items: center;
   }
   
-  /* Centered form */
+  
   #formPlayer2,#formPlayer#formPlayer3{
     max-width: 600px;
     width: 100%;
@@ -78,7 +77,6 @@
     padding: 24px;
   }
   
-  /* Close button */
   #closeMenu2,#closeMenu{
     position: absolute;
     top: 16px;
@@ -99,7 +97,7 @@
     width: 20px;
   }
   
-  /* Input styling */
+
   input {
     display: block;
     width: 100%;
@@ -116,7 +114,6 @@
     box-shadow: 0 0 4px rgba(56, 178, 172, 0.5);
   }
   
-  /* Button styling */
   button {
     cursor: pointer;
     transition: all 0.3s ease;
@@ -126,7 +123,6 @@
     background-color: #319795;
   }
   
-  /* Show container on display */
   #formContainer.show {
     display: flex;
   }
@@ -183,8 +179,8 @@
         }
   @media screen and (max-width: 1024px) {
     #terrain {
-      width: 90%; /* Adjust width for medium screens */
-      height: 70%; /* Slightly reduce height for better fit */
+      width: 90%; 
+      height: 70%;
     }
     
   }
@@ -281,7 +277,7 @@
   
   @media screen and (max-width: 480px) {
     #terrain {
-        width: 100%; /* Full width for smaller screens */
+        width: 100%;
         gap: 0;
         left: 51px;
 
@@ -341,15 +337,14 @@
       }
   }
   
-  /* Nested Divs Inside Terrain and Remplace */
- 
   
-  /* Responsive Adjustments for Cards */
+  
+
   @media screen and (max-width: 768px) {
     #terrain div div,
     #remplace div {
-      height: 100px; /* Adjust card height for smaller screens */
-      width: 70px; /* Adjust card width */
+      height: 100px; 
+      width: 70px;
     }
     #remplace{
       border-radius: 5%;

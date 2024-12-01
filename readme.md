@@ -14,16 +14,23 @@ FORMATIONRANK est une application qui permet à l'utilisateur de choisir une for
 ### 4. Calcul de la Chimie de l'Équipe
 ### 5. LocalStorage des Formations et Joueurs
 ### 6. Changement de Formation Dynamique
-### 7. Drag & Drop pour le Changement des Joueurs 
-### 8. Responsive Design
+### 7. Responsive Design
 
 
 
 ## Architecture Technique
-1. Technologies Utilisées
-- HTML : Framework principal pour créer l'API REST.
-- JS : Mapper pour convertir entre entités et DTOs.
-- CSS/TAILWIND : Réduction du code répétitif pour les entités 
+HTML :
+
+Langage de base pour structurer le contenu des pages web.
+Utilisé pour créer les balises et la structure sémantique du site.
+JavaScript (JS) :
+
+Langage de programmation pour ajouter des fonctionnalités interactives à la page (comme les animations, la gestion des événements, et les API).
+Utilisation possible de bibliothèques ou frameworks (comme React, Vue.js ou jQuery, si applicable).
+CSS / Tailwind CSS :
+
+CSS : Langage de style pour personnaliser l'apparence des pages web (couleurs, typographie, mise en page).
+Tailwind CSS : Framework CSS utilitaire qui permet de concevoir rapidement des interfaces avec des classes prédéfinies (comme flex, grid, text-center, etc.).
 ```bash
 📂 src
 └── 📂 js
