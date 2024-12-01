@@ -30,6 +30,24 @@ let PAS3 = document.getElementById("PAS3");
 let DRI3 = document.getElementById("DRI3");
 let DEF3 = document.getElementById("DEF3");
 let PHY3 = document.getElementById("PHY3");
+let DIV2  = document.getElementById("DIV2");
+let KIC2 = document.getElementById("KIC2");
+let HAN2 = document.getElementById("HAN2");
+let POS2 = document.getElementById("POS2");
+let REF2 = document.getElementById("REF2");
+let SPE2 = document.getElementById("SPE2");
+let DIV3  = document.getElementById("DIV3");
+let KIC3 = document.getElementById("KIC3");
+let HAN3 = document.getElementById("HAN3");
+let POS3 = document.getElementById("POS3");
+let REF3 = document.getElementById("REF3");
+let SPE3 = document.getElementById("SPE3");
+let DIV = document.getElementById("DIV");
+let KIC = document.getElementById("KIC");
+let HAN = document.getElementById("HAN");
+let POS = document.getElementById("POS");
+let SPE = document.getElementById("SPE");
+let REF = document.getElementById("REF");
 let PlayerName = document.getElementById("PlayerName");
 let PlayerName3 = document.getElementById("PlayerName3");
 let imgPlayerSrc = document.getElementById("imgPlayerSrc");
@@ -57,12 +75,12 @@ document.getElementById("fillAuto")
 document.getElementById("addPlayerButton").addEventListener("click", function () {
     formPlayer2.style.display = "block";
     console.log("hello");
-  });
+});
   closeMenu3.addEventListener("click", function () {
     formPlayer.style.display = "none";
     formPlayer2.style.display = "none";
     formPlayer3.style.display = "none";
-  });
+});
 closeMenu.addEventListener("click", function () {
   formPlayer.style.display = "none";
   formPlayer2.style.display = "none";
@@ -72,8 +90,7 @@ closeMenu2.addEventListener("click", function () {
   formPlayer2.style.display = "none";
 });
 let players = JSON.parse(localStorage.getItem("players")) || [];
-// })
-
+  // VALIDATION DE FORMULAIRE NUMERO 2
 function Form2(){
   formPlayer2button.addEventListener("click", function (e) {
     e.preventDefault();
@@ -108,7 +125,14 @@ function Form2(){
               DRIstats: DRI2.value,
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
-              leagueName :leagueName2.value
+              leagueName :leagueName2.value,
+              DIVstats  :DIV3.value,
+              KICstats  :KIC3.value,
+              HANstats  :HAN3.value,
+              POSstats  :POS3.value,
+              SPEstats  :SPE3.value,
+              REFstats  :REF3.value
+
   
             };
   
@@ -144,7 +168,13 @@ function Form2(){
                 DRIstats: DRI2.value,
                 DEFstats: DEF2.value,
                 PHYstats: PHY2.value,
-                leagueName : leagueName2.value
+                leagueName : leagueName2.value,
+                DIVstats  :DIV2.value,
+              KICstats  :KIC2.value,
+              HANstats  :HAN2.value,
+              POSstats  :POS2.value,
+              SPEstats  :SPE2.value,
+              REFstats  :REF2.value
               };
   
               eventListenerfornotfill();
@@ -186,7 +216,13 @@ function Form2(){
               DRIstats: DRI2.value,
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
-              leagueName :leagueName2.value
+              leagueName :leagueName2.value,
+              DIVstats  :DIV2.value,
+              KICstats  :KIC2.value,
+              HANstats  :HAN2.value,
+              POSstats  :POS2.value,
+              SPEstats  :SPE2.value,
+              REFstats  :REF2.value
   
             };
   
@@ -221,7 +257,13 @@ function Form2(){
                 DRIstats: DRI2.value,
                 DEFstats: DEF2.value,
                 PHYstats: PHY2.value,
-                leagueName : leagueName2.value
+                leagueName : leagueName2.value,
+                DIVstats  :DIV2.value,
+                KICstats  :KIC2.value,
+                HANstats  :HAN2.value,
+                POSstats  :POS2.value,
+                SPEstats  :SPE2.value,
+                REFstats  :REF2.value
               };
   
               eventListenerfornotfill();
@@ -261,7 +303,13 @@ function Form2(){
               DRIstats: DRI2.value,
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
-              leagueName :leagueName2.value
+              leagueName :leagueName2.value,
+              DIVstats  :DIV2.value,
+              KICstats  :KIC2.value,
+              HANstats  :HAN2.value,
+              POSstats  :POS2.value,
+              SPEstats  :SPE2.value,
+              REFstats  :REF2.value
   
             };
   
@@ -296,7 +344,13 @@ function Form2(){
                 DRIstats: DRI2.value,
                 DEFstats: DEF2.value,
                 PHYstats: PHY2.value,
-                leagueName : leagueName2.value
+                leagueName : leagueName2.value,
+                DIVstats  :DIV2.value,
+                KICstats  :KIC2.value,
+                HANstats  :HAN2.value,
+                POSstats  :POS2.value,
+                SPEstats  :SPE2.value,
+                REFstats  :REF2.value
               };
                 
               eventListenerfornotfill();
@@ -336,7 +390,13 @@ function Form2(){
               DRIstats: DRI2.value,
               DEFstats: DEF2.value,
               PHYstats: PHY2.value,
-              leagueName :leagueName2.value
+              leagueName :leagueName2.value,
+              DIVstats  :DIV2.value,
+              KICstats  :KIC2.value,
+              HANstats  :HAN2.value,
+              POSstats  :POS2.value,
+              SPEstats  :SPE2.value,
+              REFstats  :REF2.value
   
             };
   
@@ -370,7 +430,13 @@ function Form2(){
                 DRIstats: DRI2.value,
                 DEFstats: DEF2.value,
                 PHYstats: PHY2.value,
-                leagueName : leagueName2.value
+                leagueName : leagueName2.value,
+                DIVstats  :DIV2.value,
+                KICstats  :KIC2.value,
+                HANstats  :HAN2.value,
+                POSstats  :POS2.value,
+                SPEstats  :SPE2.value,
+                REFstats  :REF2.value
               };
   
               eventListenerfornotfill();
@@ -390,8 +456,7 @@ console.log(Position2.value[0])
     }
   });
 }
-
-// Add this function to reset inputs
+  // RESET INPUTS
 function resetInputs() {
   PlayerName2.value = "";
   imgPlayerSrc2.value = "";
@@ -406,7 +471,6 @@ function resetInputs() {
   DEF2.value = "";
   PHY2.value = "";
 }
-
 function search2(response) {
   response.forEach((element) => {
 
@@ -428,8 +492,13 @@ console.log(searchh2)
         DRI2.value = element.stats.dri.value;
         DEF2.value = element.stats.def.value;
         PHY2.value = element.stats.phy.value;
+        DIV2.value=element.stats.gkDiving.value;
+        KIC2.value=element.stats.acceleration.value;
+        HAN2.value=element.stats.gkHandling.value;
+        POS2.value=element.stats.gkPositioning.value;
+        SPE2.value=element.stats.acceleration.value;
+        REF2.value=element.stats.Reflexes.value;
         leagueName2.value = element.leagueName
-
         playerInformations2.innerHTML = `
        <img class="w-16" src="${element.avatarUrl}" >`;
       }
@@ -458,6 +527,12 @@ console.log(searchh)
         DRI3.value = element.stats.dri.value;
         DEF3.value = element.stats.def.value;
         PHY3.value = element.stats.phy.value;
+        DIV3.value=element.stats.gkDiving.value;
+        KIC3.value=element.stats.acceleration.value;
+        HAN3.value=element.stats.gkHandling.value;
+        POS3.value=element.stats.gkPositioning.value;
+        SPE3.value=element.stats.acceleration.value;
+        REF3.value=element.stats.Reflexes.value;
         leagueName3.value= element.leagueName
         playerInformations3.innerHTML = `
         
@@ -488,6 +563,12 @@ function search(response) {
         PAS.value = element.stats.pas.value;
         DRI.value = element.stats.dri.value;
         DEF.value = element.stats.def.value;
+        DIV.value=element.stats.gkDiving.value;
+        KIC.value=element.stats.acceleration.value;
+        HAN.value=element.stats.gkHandling.value;
+        POS.value=element.stats.gkPositioning.value;
+        SPE.value=element.stats.acceleration.value;
+        REF.value=element.stats.Reflexes.value;
         leagueName3.value= element.leagueName
         PHY.value = element.stats.phy.value;
         playerInformations.innerHTML = `
@@ -496,25 +577,21 @@ function search(response) {
     });
   });
 }
-
-fetch("https://younessboumeshouli.github.io/FUT_CHAMPIONS_API/players.json")
-  .then((res) => res.json())
+fetch("http://localhost:3000/items")
+ .then((res) => res.json())
   .then((response) => {
     console.log(response);
     JSON.parse(localStorage.getItem("players")) || [];
-    search(response.items);
-    search2(response.items);
-    search3(response.items);
+    search(response);
+    search2(response);
+    search3(response);
     
     eventListenerfornotfill();
     Form2()
   })
   .catch((error) => console.error("Error:", error));
-
 localStorageFormation();
-
 let attack, z, y;
-
 let form = document.getElementById("form");
 let formation = document.getElementById("formation");
 form.addEventListener("submit", function (e) {
@@ -555,7 +632,6 @@ function localStorageFormation() {
   let n = f[2];
   fill(+n, +m, +l);
 }
-
 function fill(l, m, n) {
   let f = `${n}${m}${l}`;
   localStorage.setItem("formationL", JSON.stringify(f));
@@ -579,7 +655,8 @@ function fill(l, m, n) {
     Deletebutton.classList.add("h-6")
     Deletebutton.classList.add("bg-red-400")
     Deletebutton.classList.add("relative")
-    Deletebutton.classList.add("top-8")
+    Deletebutton.classList.add("top-1")
+    Deletebutton.classList.add("left-18")
     Deletebutton.classList.add("rounded-xl")
 
     x.appendChild(Deletebutton)
@@ -604,7 +681,8 @@ function fill(l, m, n) {
     Deletebutton.classList.add("h-6")
     Deletebutton.classList.add("bg-red-400")
     Deletebutton.classList.add("relative")
-    Deletebutton.classList.add("top-8")
+    Deletebutton.classList.add("top-1")
+    Deletebutton.classList.add("left-24")
     Deletebutton.classList.add("rounded-xl")
 
     y.appendChild(Deletebutton)
@@ -628,7 +706,8 @@ function fill(l, m, n) {
     let idD = `back${i}`
     Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
     Deletebutton.classList.add("relative")
-    Deletebutton.classList.add("top-8")
+    Deletebutton.classList.add("top-0")
+    Deletebutton.classList.add("left-12")
     Deletebutton.classList.add("rounded-xl")
 
     z.appendChild(Deletebutton)
@@ -654,7 +733,7 @@ function fill(l, m, n) {
     Deletebutton.classList.add("top-8")
     Deletebutton.classList.add("rounded-xl")
 
-    Deletebutton.classList.add("left-48")
+    Deletebutton.classList.add("left-64")
     h.appendChild(Deletebutton)
     h.appendChild(divG);
   l = document.querySelectorAll("#remplace DIV");
@@ -670,7 +749,6 @@ function fill(l, m, n) {
     i++;
   });
 }
-
 eventListenerfornotfill();
 
 function handleSubmit(event) {
@@ -762,6 +840,12 @@ PACstats: player.PACstats,
 PASstats: player.PASstats,
 PHYstats: player.PHYstats,
 SHOstats: player.SHOstats,
+DIVstats:DIV3.value,
+KICstats:KIC3.value,
+HANstats:HAN3.value,
+POSstats:POS3.value,
+SPEstats:SPE3.value,
+REFstats:REF3.value,
 flagUrl:  nationaliteFlag3.value,
 id: playerId,
 leagueName: leagueName3.value,
@@ -784,13 +868,11 @@ function Disable(nf) {
     nf.classList.add("disable");
   }
 }
-
 closeMenu.addEventListener("click", function () {
   formPlayer.style.display = "none"; // Hide the form
   formPlayer.removeEventListener("submit", handleSubmit); // Remove the submit listener
   formPlayer.currentTarget = null; // Clear current target
 });
-
 function fillwithLocalStorage() {
   let players = JSON.parse(localStorage.getItem("players")) || [];
   players.forEach((element) => {
@@ -805,7 +887,7 @@ function fillwithLocalStorage() {
         
       })
       thisdiv.innerHTML = `
- <section   class="sectionRemplace flex ">
+         <section   class="sectionRemplace flex ">
   <span  class="relative spanRomplacent">
     <p class=" text-yellow-300 text-center RateText">${element.rate}</p>
     <p class=" text-center text-white playerPostion">${element.position}</p>
@@ -830,7 +912,6 @@ function fillwithLocalStorage() {
     <p class="text-[8px]">DEF ${element.DEFstats}</p>
     <p class="text-[8px]">PHY ${element.PHYstats}</p>
   </section>
-
 </section>
 
   `;
@@ -838,16 +919,12 @@ function fillwithLocalStorage() {
     }
   });
 }
-
 fillwithLocalStorage();
-
 function removeClass(nf) {
 
 
   nf.className = "";
 }
-
-
 const setupDragAndDrop = () => {
 
   const Cards = document.querySelectorAll(".notFill");
@@ -1106,7 +1183,7 @@ function CalculChemestry(){
             note+=5
             console.log(player2.leagueName,player.leagueName)  
       }
-      
+
     }
     })
   })
