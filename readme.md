@@ -1,5 +1,5 @@
 # FORMATIONRANK - GESTION DES FORMATIONS
-![Logo de l'application](https://via.placeholder.com/600x300 "FormationRank App")
+![Logo de l'application](https://camo.githubusercontent.com/0fbd27d067d89789d7532c4509ef743f9e07f5dbce0fd2599ee9268226224588/68747470733a2f2f6d6167687265622e73696d706c6f6e6c696e652e636f2f5f6e6578742f696d6167653f75726c3d687474707325334125324625324673696d706c6f6e6c696e652d76332d70726f642e73332e65752d776573742d332e616d617a6f6e6177732e636f6d2532466d65646961253246696d616765253246706e67253246323032342d31312d32352d3039333932362d363734343337633738313231643630303032313836322e706e6726773d3132383026713d3735"FormationRank App")
 
 ## Présentation du Projet
 FORMATIONRANK est une application qui permet à l'utilisateur de choisir une formation tactique, d'ajouter des joueurs dans les positions appropriées, et de visualiser la note de chimie entre les joueurs.
