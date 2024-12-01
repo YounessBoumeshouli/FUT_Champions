@@ -1,4 +1,5 @@
 # FORMATIONRANK - GESTION DES FORMATIONS
+# ⚽ Football Project
 
 ![Logo de l'application](src/assets/images/image.jpg "FormationRank App")
 
