@@ -1,6 +1,6 @@
-# Citronix - Gestion de Ferme de Citrons 🍋
+# FORMATIONRANK - GESTION DES FORMATIONS
 ## Présentation du Projet
-Citronix est une application conçue pour simplifier et optimiser la gestion des fermes de citrons. Ce système permet aux agriculteurs de suivre la production, la récolte et la vente de leurs produits, tout en garantissant une gestion efficace des ressources disponibles, notamment les fermes, champs, arbres, récoltes, et ventes.
+FORMATIONRANK est une application qui permet l'utilisateur de choisi quelque formation puis l'ajout des jeurs dans le bon touche ou bien dans le formation , avec l'affichage de la note de chimie entre les joueurs
 
 ## Fonctionnalités Principales
 
@@ -8,69 +8,28 @@ Citronix est une application conçue pour simplifier et optimiser la gestion des
 ### 2. Gestion des cartes de joueurs
 ### 3. Formulaires Dynamiques pour la Gestion des Joueurs
 ### 4. Calcul de la Chimie de l'Équipe
-### 5. Validation des Champs des Formulaires(RegEx)
-### 6. LocalStorage des Formations et Joueurs
-### 6. Drag & Drop pour le Changement des Joueurs 
-### 7. Changement de Formation Dynamique
-### 6. Drag & Drop pour le Changement des Joueurs 
-### 9. Responsive Design
+### 5. LocalStorage des Formations et Joueurs
+### 6. Changement de Formation Dynamique
+### 7. Drag & Drop pour le Changement des Joueurs 
+### 8. Responsive Design
 
 
 
 ## Architecture Technique
 1. Technologies Utilisées
-- Spring Boot : Framework principal pour créer l'API REST.
-- MapStruct : Mapper pour convertir entre entités et DTOs.
-- Lombok : Réduction du code répétitif pour les entités (getters, setters, etc.).
-- JUnit & Mockito : Tests unitaires pour garantir la fiabilité.
-- Validation Spring : Validation des données via annotations.
-2. Architecture en Couches
+- HTML : Framework principal pour créer l'API REST.
+- JS : Mapper pour convertir entre entités et DTOs.
+- CSS/TAILWIND : Réduction du code répétitif pour les entités 
 ```bash
 📂 src
-└── 📂 main
-    ├── 📂 java
-    │   └── 📂 com.citronix
-    │       ├── 📂 controller           # Contrôleurs REST
-    │       │   ├── FermeController.java
-    │       │   ├── ChampController.java
-    │       │   ├── ArbreController.java
-    │       │   ├── RecolteController.java
-    │       │   ├── RecolteDetailController.java
-    │       │   └── VenteController.java
-    │       │
-    │       ├── 📂 service              # Services contenant la logique métier
-    │       │   ├── FermeService.java
-    │       │   ├── ChampService.java
-    │       │   ├── ArbreService.java
-    │       │   ├── RecolteService.java
-    │       │   ├── RecolteDetailService.java
-    │       │   └── VenteService.java
-    │       ├── 📂 repository           # Repositories JPA
-    │       │   ├── FermeRepository.java
-    │       │   ├── ChampRepository.java
-    │       │   ├── ArbreRepository.java
-    │       │   ├── RecolteRepository.java
-    │       │   ├── RecolteDetailRepository.java
-    │       │   └── VenteRepository.java
-    │       │
-    │       ├── 📂 model                # Entités JPA représentant les tables de la base de données
-    │       │   ├── Ferme.java
-    │       │   ├── Champ.java
-    │       │   ├── Arbre.java
-    │       │   ├── Recolte.java
-    │       │   ├── RecolteDetail.java
-    │       │   └── Vente.java
-    │       │
-    │       └── 📂 dto                  # Objets de transfert de données (DTO)
-    │           ├── FermeDto.java
-    │           ├── ChampDto.java
-    │           ├── ArbreDto.java
-    │           ├── RecolteDto.java
-    │           ├── RecolteDetailDto.java
-    │           └── VenteDto.java
-    │
-    └── 📂 resources
-        └── data.sql             
+└── 📂 js
+    ├── 📂 
+    │   └──  script.js
+    │  style     
+    ├── 📂 
+    │   └── style.css
+    └── index.html
+               
 ```
 ## Exécution
 ### Cloner le dépôt :

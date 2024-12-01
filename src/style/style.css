@@ -9,6 +9,9 @@
     position: relative; 
   
   }
+  body{
+    background-color :#2d3748;
+  }
   #terrain div div,
   #remplace div {
     background-image: url("https://cdn3.futbin.com/content/fifa25/img/cards/hd/161_prime_hero.png?fm=png&ixlib=java-2.1.0&verzion=4&w=644&s=b92abed58187f4df4893c23cfa1857aa");
@@ -190,13 +193,13 @@
     #formPlayer , #formPlayer2,#formPlayer3{
       position: absolute;
       top: 190px;
-      left: 39px;
+      left: 10px;
   }
 
     #terrain {
-      width: 78%;
-      /* Full width for smaller screens */
-      height: 60%; /* Adjust height for smaller devices */
+      width: 100%;
+      position: relative;
+      left: 20px;
     }
     #formation{
       width: fit-content;
@@ -204,7 +207,7 @@
     #terrain div{
       position: relative;
       bottom: -1px;
-      right: 19px;
+      right: 2px;
     }
     .RateText{
       font-size: 9px;
@@ -279,11 +282,14 @@
   @media screen and (max-width: 480px) {
     #terrain {
         width: 100%; /* Full width for smaller screens */
-        height: 60%; /* Adjust height for smaller devices */
         gap: 0;
+        left: 51px;
+
       }
       #terrain div{
         height: 88px;
+        position: relative;
+        right: 27px;
       }
       .RateText{
         font-size: 10px;
@@ -345,8 +351,15 @@
       height: 100px; /* Adjust card height for smaller screens */
       width: 70px; /* Adjust card width */
     }
+    #remplace{
+      border-radius: 5%;
+      width: 70%;
+      position: relative;
+      left: 15%;
+    }
   }
   
+
   @media screen and (max-width: 480px) {
     #terrain div div,
     #remplace div {
