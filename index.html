@@ -5,22 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="src/style/style.css" />
-    <link rel="stylesheet" href="src/style/output.css" />
+    <link rel="stylesheet" href="src/styles/style.css" />
+    <link rel="stylesheet" href="src/styles/output.css" />
   </head>
   <body>
     <nav
       class="relative flex w-full flex-wrap items-center justify-around py-2 shadow-dark-mild dark:bg-neutral-700 lg:py-4"
     >
-      <div class="flex flex-col items-center">
+      <div class="flex  items-center">
         <img
           src="https://img.freepik.com/vector-premium/plantilla-logotipo-futbol-soccer-icono-ilustracion-identidad-marca-ilustracion-aislada-plana-grafico-vectorial_7109-1683.jpg"
           width="50px"
           alt=""
           srcset=""
+          class="mr-4"
         />
 
-        <h1>FORMATIONRANK</h1>
+        <h1 class="text-white font-thin  text-4xl">FORMATIONRANK</h1>
       </div>
     </nav>
     <form
@@ -371,7 +372,12 @@
           </form>
 
           <!-- Chemistry -->
-          <div id="chemestry" class="flex-1 text-center"></div>
+          <div>
+            <p>YOUR SCORE :</p>
+            <div id="chemestry" class="flex-1 text-center">
+            
+            </div>
+          </div>
 
           <div
             id="addPlayerButton"
@@ -395,7 +401,7 @@
           <div>4th</div>
         </section>
         <div class="flex justify-center text-black text-lg">
-          <h3>Remplacement</h3>
+          <h3 class="text-white">Remplacement</h3>
         </div>
         <section id="remplace" class="flex w-full flex-wrap bg-gray-600">
           <div class=""></div>

@@ -440,7 +440,7 @@ function Form2(){
               };
   
               eventListenerfornotfill();
-              break; // Stop the loop once a slot is filled
+              break; 
             }
           }
           if (player) {
@@ -497,7 +497,7 @@ console.log(searchh2)
         HAN2.value=element.stats.gkHandling.value;
         POS2.value=element.stats.gkPositioning.value;
         SPE2.value=element.stats.acceleration.value;
-        REF2.value=element.stats.Reflexes.value;
+        REF2.value=element.stats.gkReflexes.value;
         leagueName2.value = element.leagueName
         playerInformations2.innerHTML = `
        <img class="w-16" src="${element.avatarUrl}" >`;
@@ -532,7 +532,7 @@ console.log(searchh)
         HAN3.value=element.stats.gkHandling.value;
         POS3.value=element.stats.gkPositioning.value;
         SPE3.value=element.stats.acceleration.value;
-        REF3.value=element.stats.Reflexes.value;
+        REF3.value=element.stats.gkReflexes.value;
         leagueName3.value= element.leagueName
         playerInformations3.innerHTML = `
         
@@ -568,7 +568,7 @@ function search(response) {
         HAN.value=element.stats.gkHandling.value;
         POS.value=element.stats.gkPositioning.value;
         SPE.value=element.stats.acceleration.value;
-        REF.value=element.stats.Reflexes.value;
+        REF.value=element.stats.gkReflexes.value;
         leagueName3.value= element.leagueName
         PHY.value = element.stats.phy.value;
         playerInformations.innerHTML = `
@@ -682,7 +682,7 @@ function fill(l, m, n) {
     Deletebutton.classList.add("bg-red-400")
     Deletebutton.classList.add("relative")
     Deletebutton.classList.add("top-1")
-    Deletebutton.classList.add("left-24")
+    Deletebutton.classList.add("left-18")
     Deletebutton.classList.add("rounded-xl")
 
     y.appendChild(Deletebutton)
@@ -707,7 +707,7 @@ function fill(l, m, n) {
     Deletebutton.setAttribute("onclick",`DeletePlayer(${idD})`)
     Deletebutton.classList.add("relative")
     Deletebutton.classList.add("top-0")
-    Deletebutton.classList.add("left-12")
+    Deletebutton.classList.add("left-18")
     Deletebutton.classList.add("rounded-xl")
 
     z.appendChild(Deletebutton)
@@ -775,6 +775,12 @@ function handleSubmit(event) {
       DRIstats: DRI.value,
       DEFstats: DEF.value,
       PHYstats: PHY.value,
+      DIVstats:DIV.value,
+      KICstats  :KIC.value,
+        HANstats:HAN.value,
+       POSstats :POS.value,
+       SPEstats :SPE.value,
+       REF :REF.value
     };
 
     players.push(player);
@@ -886,36 +892,69 @@ function fillwithLocalStorage() {
         console.log('hello')
         
       })
+    if(element.position == "GK"){
       thisdiv.innerHTML = `
-         <section   class="sectionRemplace flex ">
+      <section   class="sectionRemplace flex ">
+ 
   <span  class="relative spanRomplacent">
-    <p class=" text-yellow-300 text-center RateText">${element.rate}</p>
-    <p class=" text-center text-white playerPostion">${element.position}</p>
-    <img class="flags" src="${element.flagUrl}" alt="Flag">
-    <img class="logos" src="${element.ClubUrl}" alt="Club">
+  <p class=" text-yellow-300 text-center RateText">${element.rate}</p>
+  <p class=" text-center text-white playerPostion">${element.position}</p>
+  <img class="flags" src="${element.flagUrl}" alt="Flag">
+  <img class="logos" src="${element.ClubUrl}" alt="Club">
   </span>
   <section>
-    <img class="imageCard" src="${element.image}" alt="Player">
+  <img class="imageCard" src="${element.image}" alt="Player">
   </section>
+  </section>
+  
+  <h1 class=" text-center text-white playerName">${element.name}</h1>
+  
+  <section class="flex  text-yellow-400 spanStats">
+  <section class="firstStats">
+  <p class="text-[8px]">DIV ${element.DIVstats}</p>
+  <p class="text-[8px]">KIC ${element.KICstats}</p>
+  <p class="text-[8px]">HAN ${element.HANstats}</p>
+  </section>
+  <section class=" firstStats">
+  <p class="text-[8px]">POS ${element.POSstats}</p>
+  <p class="text-[8px]">SPE ${element.SPEstats}</p>
+  <p class="text-[8px]">REF ${element.REFstats}</p>
+  </section>
+  </section>
+  
+  `;
+    }else{
+      thisdiv.innerHTML = `
+      <section   class="sectionRemplace flex ">
+<span  class="relative spanRomplacent">
+ <p class=" text-yellow-300 text-center RateText">${element.rate}</p>
+ <p class=" text-center text-white playerPostion">${element.position}</p>
+ <img class="flags" src="${element.flagUrl}" alt="Flag">
+ <img class="logos" src="${element.ClubUrl}" alt="Club">
+</span>
+<section>
+ <img class="imageCard" src="${element.image}" alt="Player">
+</section>
 </section>
 
 <h1 class=" text-center text-white playerName">${element.name}</h1>
 
 <section class="flex  text-yellow-400 spanStats">
-  <section class="firstStats">
-    <p class="text-[8px]">PAC ${element.PACstats}</p>
-    <p class="text-[8px]">SHO ${element.SHOstats}</p>
-    <p class="text-[8px]">PAS ${element.PASstats}</p>
-  </section>
-  <section class=" firstStats">
-    <p class="text-[8px]">DRI ${element.DRIstats}</p>
-    <p class="text-[8px]">DEF ${element.DEFstats}</p>
-    <p class="text-[8px]">PHY ${element.PHYstats}</p>
-  </section>
+<section class="firstStats">
+ <p class="text-[8px]">PAC ${element.PACstats}</p>
+ <p class="text-[8px]">SHO ${element.SHOstats}</p>
+ <p class="text-[8px]">PAS ${element.PASstats}</p>
+</section>
+<section class=" firstStats">
+ <p class="text-[8px]">DRI ${element.DRIstats}</p>
+ <p class="text-[8px]">DEF ${element.DEFstats}</p>
+ <p class="text-[8px]">PHY ${element.PHYstats}</p>
+</section>
 </section>
 
-  `;
-  
+`;
+    }
+    
     }
   });
 }
@@ -1019,6 +1058,12 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DRIstats: rPlayer.DRIstats,
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
+            DIVstats:rPlayer.DIVstats,
+      KICstats  :rPlayer.KICstats,
+        HANstats:rPlayer.HANstats,
+       POSstats :rPlayer.POSstats,
+       SPEstats :rPlayer.SPEstats,
+       REFstats :rPlayer.REFstats
           };
           playerIndex++
           console.log(playerIndex)
@@ -1063,6 +1108,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DRIstats: rPlayer.DRIstats,
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
+          
           };
           playerIndex++
           players.push(player);
@@ -1108,6 +1154,7 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DRIstats: rPlayer.DRIstats,
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
+            
           };
           playerIndex++
           players.push(player);
@@ -1150,6 +1197,12 @@ document.getElementById("fillAuto").addEventListener("click",function(){
             DRIstats: rPlayer.DRIstats,
             DEFstats: rPlayer.DEFstats,
             PHYstats: rPlayer.PHYstats,
+            DIVstats:rPlayer.DIVstats,
+            KICstats  :rPlayer.KICstats,
+              HANstats:rPlayer.HANstats,
+             POSstats :rPlayer.POSstats,
+             SPEstats :rPlayer.SPEstats,
+             REFstats :rPlayer.REFstats
           };
           players.push(player);
           localStorage.setItem("players", JSON.stringify(players));
